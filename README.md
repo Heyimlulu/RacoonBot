@@ -1,6 +1,6 @@
 # Racoon Bot
 
-A multi function discord bot.
+A multifunction discord bot.
 
 ## Getting started
 
