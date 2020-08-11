@@ -1,4 +1,4 @@
-# racoon-bot
+# Racoon Bot
 
 A multi function discord bot.
 
