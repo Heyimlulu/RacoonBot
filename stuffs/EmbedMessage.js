@@ -2,10 +2,10 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'embed',
-    description: 'Embed!',
+    name: 'info',
+    description: 'Info!',
     execute(message, args) {
-        const exampleEmbed = new Discord.MessageEmbed()
+        const Embed = new Discord.MessageEmbed()
             .setColor('#0099ff')
             .setTitle('Some title')
             .setURL('https://discord.js.org/')
@@ -23,7 +23,7 @@ module.exports = {
             .setTimestamp()
             .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
 
-        message.send(exampleEmbed);
+        message.channel.send(Embed);
     },
 };
 

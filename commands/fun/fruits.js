@@ -5,5 +5,8 @@ module.exports = {
         message.react('🍎');
         message.react('🍊');
         message.react('🍇');
+        message.react('🍌');
+        message.react('🍒');
+        message.react('🍑');
     },
 };
