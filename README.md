@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# racoon-bot
-=======
 # Racoon Bot
 
 A multi function discord bot.
@@ -37,4 +34,3 @@ Don't forget to setup your bot token before running it
 ## License
 
 Licensed under the **MIT License**
->>>>>>> parent of 83f7b4d... Update README.md
