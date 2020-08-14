@@ -34,6 +34,15 @@ for (const file of commandFilesGeneral) {
     client.commands.set(command.name, command);
 }
 
+const commandFilesVoice = fs.readdirSync('./commands/voice').filter(file => file.endsWith('.js'));
+for (const file of commandFilesVoice) {
+    const command = require(`./commands/voice/${file}`);
+
+    // set a new item in the Collection
+    // with the key as the command name and the value as the exported module
+    client.commands.set(command.name, command);
+}
+
 /*
 const commandFilesOwner = fs.readdirSync('./commands/owner').filter(file => file.endsWith('.js'));
 for (const file of commandFilesOwner) {
@@ -56,14 +65,30 @@ client.on('ready', () => {
     var activity = activities[Math.floor(Math.random()*activities.length)];
 
     client.user.setActivity(activity);
+    // Alternatively, you can set the activity to any of the following:
+    // PLAYING, STREAMING, LISTENING, WATCHING
+    // For example:
+    // client.user.setActivity("Spotify", {type: "LISTENING"})
 });
 
 
-client.on('message', message => {
+client.on('message', async message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
+
+    // Prevent bot from responding to its own messages
+    if (receivedMessage.author == client.user) {
+        return
+    }
+
+    // Check if the bot's user was tagged in the message
+    if (receivedMessage.content.includes(client.user.toString())) {
+        // Send acknowledgement message
+        receivedMessage.channel.send("Message received from " +
+            receivedMessage.author.toString() + ": " + receivedMessage.content)
+    }
 
     /*
     if (command === 'kick') {
@@ -74,7 +99,6 @@ client.on('message', message => {
 
         message.channel.send(`You wanted to kick: ${taggedUser.username}`);
     }
-
      */
 
     if (!client.commands.has(command)) return;
