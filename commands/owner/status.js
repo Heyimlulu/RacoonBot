@@ -2,7 +2,6 @@
 module.exports = {
     name: 'status',
     description: 'Status!',
-    aliases: ['status'],
     category: 'owner',
     args: [
         {
