@@ -20,11 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb4cbc3c-c81a-4689-b2fb-f96678e64067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/voice/joinchannel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/commands/voice/leavechannel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/utility/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +47,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/voicetest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../config.json" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -75,6 +71,8 @@
       <workItem from="1597226483046" duration="6445000" />
       <workItem from="1597393253314" duration="5737000" />
       <workItem from="1597428148739" duration="2751000" />
+      <workItem from="1597524000561" duration="61000" />
+      <workItem from="1597524372975" duration="118000" />
     </task>
     <servers />
   </component>
@@ -92,5 +90,11 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1597524034232">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-350.1080.1880/-1080.-363.1080.1880@0.0.1920.1040" timestamp="1597524034232" />
   </component>
 </project>
