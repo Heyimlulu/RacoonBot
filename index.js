@@ -2,10 +2,18 @@ const Discord = require('discord.js');
 //const client = new Discord();
 const config = require("./config");
 const fs = require('fs');
-
+const WS = require('./ws/ws')
 const client = new Discord.Client();
+
 client.commands = new Discord.Collection();
 
+// ================================================================================================ //
+
+// Create Websocket instance with token '123456',
+// port 5665 and passing the discord client instance
+var ws = new WS(config.ws.token, config.ws.port, client)
+
+// ===================================== Discord Collection ===================================== //
 
 const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
 for (const file of commandFilesFun) {
@@ -34,15 +42,6 @@ for (const file of commandFilesGeneral) {
     client.commands.set(command.name, command);
 }
 
-const commandFilesVoice = fs.readdirSync('./commands/voice').filter(file => file.endsWith('.js'));
-for (const file of commandFilesVoice) {
-    const command = require(`./commands/voice/${file}`);
-
-    // set a new item in the Collection
-    // with the key as the command name and the value as the exported module
-    client.commands.set(command.name, command);
-}
-
 /*
 const commandFilesOwner = fs.readdirSync('./commands/owner').filter(file => file.endsWith('.js'));
 for (const file of commandFilesOwner) {
@@ -55,6 +54,8 @@ for (const file of commandFilesOwner) {
 
  */
 
+// ==================================== On bot start ==================================== //
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
@@ -65,30 +66,16 @@ client.on('ready', () => {
     var activity = activities[Math.floor(Math.random()*activities.length)];
 
     client.user.setActivity(activity);
-    // Alternatively, you can set the activity to any of the following:
-    // PLAYING, STREAMING, LISTENING, WATCHING
-    // For example:
-    // client.user.setActivity("Spotify", {type: "LISTENING"})
+    //client.user.setActivity('you', {type: 'WATCHING'})
 });
 
+// ================================= On message received ================================= //
 
-client.on('message', async message => {
+client.on('message', message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
-
-    // Prevent bot from responding to its own messages
-    if (receivedMessage.author == client.user) {
-        return
-    }
-
-    // Check if the bot's user was tagged in the message
-    if (receivedMessage.content.includes(client.user.toString())) {
-        // Send acknowledgement message
-        receivedMessage.channel.send("Message received from " +
-            receivedMessage.author.toString() + ": " + receivedMessage.content)
-    }
 
     /*
     if (command === 'kick') {
@@ -110,5 +97,7 @@ client.on('message', async message => {
         message.reply('there was an error trying to execute that command!');
     }
 });
+
+// ======================================= Bot logon ======================================= //
 
 client.login(config.token);
