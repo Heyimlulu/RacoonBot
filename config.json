@@ -1,4 +1,8 @@
 {
-  "token": "your-token-goes-here",
-  "prefix": "racoon "
+  "token": "NzM0NDI2MzI4MDAyMDY4NDgx.XxRh0Q.-M_akhySzOBgUNZiguf1IiREYwM",
+  "prefix": "racoon ",
+  "ws": {
+    "port": 5665,
+    "token": "123456"
+  }
 }
