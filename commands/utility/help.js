@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'help',
     description: 'Help!',
-    execute(message, args) {
+    execute(message) {
         const Embed = new Discord.MessageEmbed()
             .setColor('#FFCE00')
             .setTitle('Commands list')

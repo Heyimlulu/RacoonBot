@@ -46,9 +46,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.10.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\lucas\OneDrive\Documents\GitHub\racoon-bot\stuffs" />
     </key>
@@ -65,6 +70,23 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -78,6 +100,8 @@
       <workItem from="1597165164830" duration="1259000" />
       <workItem from="1597226483046" duration="6445000" />
       <workItem from="1597393253314" duration="5737000" />
+      <workItem from="1597411631627" duration="1222000" />
+      <workItem from="1597654090074" duration="11827000" />
     </task>
     <servers />
   </component>

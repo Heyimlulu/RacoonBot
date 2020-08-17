@@ -2,10 +2,18 @@ const Discord = require('discord.js');
 //const client = new Discord();
 const config = require("./config");
 const fs = require('fs');
-
+const WS = require('./ws/ws')
 const client = new Discord.Client();
+
 client.commands = new Discord.Collection();
 
+// ================================================================================================ //
+
+// Create Websocket instance with token '123456',
+// port 5665 and passing the discord client instance
+var ws = new WS(config.ws.token, config.ws.port, client)
+
+// ===================================== Discord Collection ===================================== //
 
 const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
 for (const file of commandFilesFun) {
@@ -46,6 +54,8 @@ for (const file of commandFilesOwner) {
 
  */
 
+// ==================================== On bot start ==================================== //
+
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
@@ -56,8 +66,10 @@ client.on('ready', () => {
     var activity = activities[Math.floor(Math.random()*activities.length)];
 
     client.user.setActivity(activity);
+    //client.user.setActivity('you', {type: 'WATCHING'})
 });
 
+// ================================= On message received ================================= //
 
 client.on('message', message => {
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
@@ -74,7 +86,6 @@ client.on('message', message => {
 
         message.channel.send(`You wanted to kick: ${taggedUser.username}`);
     }
-
      */
 
     if (!client.commands.has(command)) return;
@@ -86,5 +97,7 @@ client.on('message', message => {
         message.reply('there was an error trying to execute that command!');
     }
 });
+
+// ======================================= Bot logon ======================================= //
 
 client.login(config.token);
