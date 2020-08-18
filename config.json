@@ -1,8 +1,8 @@
 {
-  "token": "your-token-goes-here",
+  "token": "NzM0NDI2MzI4MDAyMDY4NDgx.XxRh0Q.-M_akhySzOBgUNZiguf1IiREYwM",
   "prefix": "racoon ",
   "ws": {
     "port": 5665,
-    "token": "your-secret-token"
+    "token": "123456"
   }
 }

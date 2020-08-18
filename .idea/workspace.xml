@@ -47,11 +47,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.10.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ws/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ws" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot\ws" />
       <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot\ws\img" />
       <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot" />
     </key>
@@ -103,7 +104,7 @@
       <workItem from="1597226483046" duration="6445000" />
       <workItem from="1597393253314" duration="5737000" />
       <workItem from="1597411631627" duration="1222000" />
-      <workItem from="1597654090074" duration="19911000" />
+      <workItem from="1597654090074" duration="21326000" />
     </task>
     <servers />
   </component>
