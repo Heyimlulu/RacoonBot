@@ -69,9 +69,10 @@ class WebSocket {
             this.client.guilds.cache.first().channels.cache
                 .filter(c => c.type == 'text')
                 .forEach(c => {
-                chans.push({id: c.id, name: c.name})
+                    chans.push({id: c.id, name: c.name})
             })
-            /*
+            /* This didn't work with old version
+
             this.client.guilds.first().channels
                 .filter(c => c.type == 'text')
                 .forEach(c => {
@@ -99,7 +100,7 @@ class WebSocket {
             if (!this.checkToken(_token))
                 return res.sendStatus(401)
 
-            var chan = this.client.guilds.first().channels.get(channelid)
+            var chan = this.client.guilds.cache.first().channels.cache.get(channelid)
 
             // catch post request and if token passes,
             // send message into selected channel

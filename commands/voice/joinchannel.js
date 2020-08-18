@@ -1,3 +1,4 @@
+/*
 module.exports = {
     name: 'join',
     description: 'Join!',
@@ -14,3 +15,5 @@ module.exports = {
         }
     },
 };
+
+ */

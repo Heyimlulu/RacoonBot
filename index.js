@@ -9,12 +9,14 @@ client.commands = new Discord.Collection();
 
 // ================================================================================================ //
 
-// Create Websocket instance with token '123456',
+// Create Websocket instance with token you set in config.json file,
 // port 5665 and passing the discord client instance
+// locahost:5665/?token='your-token-here'
 var ws = new WS(config.ws.token, config.ws.port, client)
 
 // ===================================== Discord Collection ===================================== //
 
+/*
 const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
 for (const file of commandFilesFun) {
     const command = require(`./commands/fun/${file}`);
@@ -23,6 +25,8 @@ for (const file of commandFilesFun) {
     // with the key as the command name and the value as the exported module
     client.commands.set(command.name, command);
 }
+
+ */
 
 const commandFilesUtility = fs.readdirSync('./commands/utility').filter(file => file.endsWith('.js'));
 for (const file of commandFilesUtility) {
@@ -77,7 +81,8 @@ client.on('message', message => {
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
     const command = args.shift().toLowerCase();
 
-    /*
+    /* command = kick @mentioneduser
+
     if (command === 'kick') {
         if (!message.mentions.users.size) {
             return message.reply('you need to tag a user in order to kick them!');

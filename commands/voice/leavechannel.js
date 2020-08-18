@@ -1,3 +1,4 @@
+/*
 module.exports = {
     name: 'leave',
     description: 'Leave!',
@@ -11,3 +12,5 @@ module.exports = {
         }
     },
 };
+
+ */
