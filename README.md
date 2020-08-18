@@ -14,14 +14,13 @@ You need to install **Node.js** on your computer to get this bot running
 Clone this repository
 ```
 
-To run the bot
+Then enter your bot token in the *config.json* file
+
+Now you can run the bot with
 
 ```
-node index.js
 npm test
 ```
-
-Don't forget to setup your bot token in the *config.json* file before running it
 
 ## Using my bot
 
