@@ -12,13 +12,13 @@ You need to install **Node.js** on your computer to get this bot running
 
 ```
 Clone this repository
-cd to the bot directory
 ```
 
 To run the bot
 
 ```
 node index.js
+npm test
 ```
 
 Don't forget to setup your bot token in the *config.json* file before running it
@@ -29,7 +29,13 @@ Click [here](https://discord.com/api/oauth2/authorize?client_id=7344263280020684
 
 ## API
 
-- DiscordJS
+- discordjs
+
+- express
+
+- express-handlebars
+
+- body-parser
 
 ## Author
 
