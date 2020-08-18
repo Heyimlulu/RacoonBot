@@ -24,7 +24,7 @@ npm test
 
 ## Using my bot
 
-Click [here](https://discord.com/api/oauth2/authorize?client_id=734426328002068481&permissions=0&scope=bot) and you can add **Racoon Bot** to your own server and enjoy its full feature
+Click [here](https://discord.com/api/oauth2/authorize?client_id=734426328002068481&permissions=0&scope=bot) for inviting **Racoon Bot** on your server and enjoy its full feature
 
 ## API
 
