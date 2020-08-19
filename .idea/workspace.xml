@@ -73,7 +73,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.racoonbot">
+    <configuration name="racoonbot" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="racoonbot" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -86,6 +96,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.racoonbot" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -105,6 +116,9 @@
       <workItem from="1597393253314" duration="5737000" />
       <workItem from="1597411631627" duration="1222000" />
       <workItem from="1597654090074" duration="21556000" />
+      <workItem from="1597740502179" duration="77000" />
+      <workItem from="1597826146991" duration="3000" />
+      <workItem from="1597834954830" duration="10961000" />
     </task>
     <servers />
   </component>

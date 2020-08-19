@@ -16,7 +16,6 @@ var ws = new WS(config.ws.token, config.ws.port, client)
 
 // ===================================== Discord Collection ===================================== //
 
-/*
 const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
 for (const file of commandFilesFun) {
     const command = require(`./commands/fun/${file}`);
@@ -25,8 +24,6 @@ for (const file of commandFilesFun) {
     // with the key as the command name and the value as the exported module
     client.commands.set(command.name, command);
 }
-
- */
 
 const commandFilesUtility = fs.readdirSync('./commands/utility').filter(file => file.endsWith('.js'));
 for (const file of commandFilesUtility) {

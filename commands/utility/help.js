@@ -1,3 +1,4 @@
+/*
 const Discord = require('discord.js');
 
 module.exports = {
@@ -19,3 +20,5 @@ module.exports = {
         message.channel.send(Embed);
     },
 };
+
+ */
