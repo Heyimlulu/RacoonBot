@@ -7,6 +7,7 @@ module.exports = {
     execute(message) {
 
         // Display the menu in a MessageEmbed
+        // Display the avatar info for the actual user
         const Embed = new Discord.MessageEmbed()
         const roles = []
             if(!message.mentions.users.first()) {
@@ -22,8 +23,9 @@ module.exports = {
             }
             else
             {
+                // Display the avatar info for the mentioned user
                 const User = message.mentions.users.first()
-                Embed.setTitle(`${User.tag}'s avatar`)
+                Embed.setTitle(`This is ${User.tag}'s avatar`)
                 Embed.setImage(User.displayAvatarURL())
                 //Embed.setThumbnail(User.displayAvatarURL())
                 Embed.setColor("RANDOM")

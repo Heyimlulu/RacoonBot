@@ -2,16 +2,12 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'info',
-    description: 'Info!',
+    description: 'Show some informations about the bot!',
     execute(message) {
         const Embed = new Discord.MessageEmbed()
-            .setColor('#800080')
+            .setColor("RANDOM")
             .setTitle('Informations')
-            .setDescription('Racoon bot made with 💛 by Ｙｕｋｉ#0001')
-            /*
-            .setDescription('Made with 💛 by Ｙｕｋｉ#0001')
-            .addField('racoon bot by Ｙｕｋｉ#0001', 'You can find it here at the [Racoon Bot Repository](https://github.com/Heyimlulu/racoon-bot)', true)
-             */
+            .setDescription('RacoonBot made with 💛 by Ｙｕｋｉ#0001')
             .setTimestamp()
 
         message.channel.send(Embed);

@@ -3,6 +3,6 @@
   "prefix": "racoon ",
   "ws": {
     "port": 5665,
-    "token": "your-websocket-token"
+    "token": "custom-supersecret-interface-token"
   }
 }

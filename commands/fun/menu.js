@@ -6,10 +6,11 @@ module.exports = {
     category: 'fun',
     execute(message) {
         var plats = [
-            'Salade',
+            'Salade (au choix)',
             'Sandwich',
             'Taboulet',
-            'Croissant'];
+            'Croissant',
+            'Pizza'];
         var plat = plats[Math.floor(Math.random()*plats.length)];
 
         var boissons = [
@@ -27,6 +28,7 @@ module.exports = {
 
 
         // Display the menu in a MessageEmbed
+        // Display the menu for the actual user
         const Embed = new Discord.MessageEmbed()
         if(!message.mentions.users.first()) {
             Embed.setColor("RANDOM")
@@ -39,6 +41,7 @@ module.exports = {
         }
         else
         {
+            // Display the menu for the mentioned user
             const User = message.mentions.users.first()
             Embed.setColor("RANDOM")
                 .setTitle(`Voici le menu du jour pour ${User.tag}`)

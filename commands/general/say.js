@@ -1,7 +1,7 @@
 module.exports = {
     name: 'say',
-    description: 'Say!',
-    execute(message, args) {
+    description: 'Random sentence!',
+    execute(message) {
         var speechs = [
             'What?!',
             'Oui',
