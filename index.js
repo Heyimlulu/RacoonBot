@@ -48,6 +48,8 @@ for (const file of commandFilesGeneral) {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
+    // old script
+    /*
     var activities = [
         'Thief Simulator | my prefix is: racoon',
         'Stealing food | my prefix is: racoon',
@@ -55,7 +57,23 @@ client.on('ready', () => {
     var activity = activities[Math.floor(Math.random()*activities.length)];
 
     client.user.setActivity(activity);
-    //client.user.setActivity('you', {type: 'WATCHING'})
+
+     */
+
+    var activities = [
+        'Thief Simulator | my prefix is: racoon',
+        'Stealing food | my prefix is: racoon',
+        'Getting caught from stealing food | my prefix is: racoon',
+        'with my racoon friends | my prefix is: racoon'];
+
+    let activityTypes = ['PLAYING','STREAMING','LISTENING','WATCHING']
+    //let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
+
+    // Set new activity after few minutes
+    setInterval(() => {
+        let activity = activities[Math.floor(Math.random()*(activities.length - 1) + 1)];
+        client.user.setActivity(activity, {type: "PLAYING"});
+    }, 600000); // Runs this every 10 minutes.
 });
 
 // ================================= On message received ================================= //
