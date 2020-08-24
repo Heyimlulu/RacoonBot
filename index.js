@@ -62,10 +62,10 @@ client.on('ready', () => {
 
     var activities = [
         'Thief Simulator | my prefix is: racoon',
-        'Stealing food | my prefix is: racoon',
+        'Stealing food',
         'Getting caught from stealing food | my prefix is: racoon',
-        'with my racoon friends | my prefix is: racoon',
-        'eating da gorbage | my prefix is: racoon',
+        'with my racoon friends',
+        'eating da gorbage',
         "don't touch my berries | my prefix is: racoon",
         'give me food and I will be grateful | my prefix is: racoon',
         'with hooman'];

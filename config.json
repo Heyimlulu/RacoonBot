@@ -2,7 +2,7 @@
   "token": "your-bot-token-here",
   "prefix": "racoon ",
   "ws": {
-    "port": 8000,
+    "port": 8080,
     "token": "custom-supersecret-interface-token"
   }
 }
