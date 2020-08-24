@@ -23,7 +23,7 @@ npm install
 
 ### Running
 
-Enter your bot token in the *config.json* file and your secret code to get access to the supersecret interface
+Enter your bot token in the *config.json* file and set a secret code to get access to the supersecret web interface
 
 Now you can run the bot with
 
