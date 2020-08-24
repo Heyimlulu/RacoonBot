@@ -10,17 +10,17 @@ module.exports = {
             const InfoEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setTitle('Role informations')
-                .addField('racoon role [create]', 'Create new role')
-                .addField('racoon role [delete]', 'Delete existing role')
-                .addField('racoon role [add]', 'Add role to user')
-                .addField('racoon role [remove]', 'Remove role to user')
+                .addField('racoon role [create] [Role name] [#Hex color]', 'Create new role')
+                .addField('racoon role [delete] [Role name]', 'Delete existing role')
+                .addField('racoon role [add] [Role name]', 'Add role to user')
+                .addField('racoon role [remove] [Role name]', 'Remove role to user')
             message.channel.send(InfoEmbed)
         }  else {
 
             // Check if the user has ADMINISTRATOR permission
             //if (!message.member.permissions.has("ADMINISTRATOR")) message.channel.send(`You did not have administror permission!, ${message.author.username}`)
 
-            // Create a role
+            // Create role to server
             if (args[0].toLowerCase() == 'create') {
                 let rName = message.content.split('racoon role create').join("")
                 let rColor;
@@ -63,51 +63,71 @@ module.exports = {
                 // Send the MessageEmbed
                 message.channel.send(Embed)
             }
-            // Delete a role
+            // Delete role from server. REQUIRE MANAGE ROLE PERMISSION
             else if (args[0].toLowerCase() == 'delete') {
-                if (!message.member.hasPermission("MANAGE_ROLES")) message.channel.send("You do not have manage roles permission!")
-
-                const roleDelete = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
-                // Check if the role name is specified
-                if (!roleDelete) message.channel.send('You did not specify the name of the role you want to delete!')
-                // Delete the role
-                roleDelete.delete();
-                const EmbedDelete = new Discord.MessageEmbed()
-                    .setTitle('Deleted role!')
-                    .setDescription(`${message.author.tag} has deleted the role "${roleDelete.name}"`)
-
-                message.channel.send(EmbedDelete)
-            }
-            // Add role
-            else if (args[0].toLowerCase() == 'add') {
-
-                const roleAdd = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
-
-                if (message.guild.member(message.author).roles.cache.has(roleAdd.id)) {
-                    message.channel.send(`You already have that role! ${message.author.tag}`)
+                if (message.content === 'racoon role delete'){
+                    message.channel.send('You did not specify a role!')
+                    return
                 } else {
-                    message.guild.member(message.author).roles.add(roleAdd);
+                    if (!message.member.hasPermission("MANAGE_ROLES")) message.channel.send("You do not have manage roles permission!")
+
+                    const roleDelete = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
+
+                    if (!roleDelete) return message.channel.send("Couldn't delete that role!")
+
+                    // Check if the role name is specified
+                    if (!roleDelete) message.channel.send('You did not specify the name of the role you want to delete!')
+                    // Delete the role
+                    roleDelete.delete();
                     const EmbedDelete = new Discord.MessageEmbed()
-                        .setTitle('Role added!')
-                        .setDescription(`${message.author.tag} has been received the role "${roleAdd.name}"`)
+                        .setTitle('Deleted role!')
+                        .setDescription(`${message.author.tag} has deleted the role "${roleDelete.name}"`)
 
                     message.channel.send(EmbedDelete)
                 }
             }
-            // Remove role
-            else if (args[0].toLowerCase() == 'remove') {
-
-                const roleremove = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
-
-                if (message.guild.member(message.author).roles.cache.has(roleremove.id)) {
-                    message.guild.member(message.author).roles.remove(roleremove);
-                    const EmbedDelete = new Discord.MessageEmbed()
-                        .setTitle('Role removed!')
-                        .setDescription(`${message.author.tag} has been removed the role "${roleremove.name}"`)
-
-                    message.channel.send(EmbedDelete)
+            // Add role to user
+            else if (args[0].toLowerCase() == 'add') {
+                if (message.content === 'racoon role add'){
+                    message.channel.send('You did not specify a role!')
+                    return
                 } else {
-                    message.channel.send(`You did not have that role! ${message.author.tag}`)
+                    const roleAdd = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
+
+                    if (!roleAdd) return message.channel.send("Couldn't assign that role!")
+
+                    if (message.guild.member(message.author).roles.cache.has(roleAdd.id)) {
+                        message.channel.send(`You already have that role! ${message.author.tag}`)
+                    } else {
+                        message.guild.member(message.author).roles.add(roleAdd);
+                        const EmbedDelete = new Discord.MessageEmbed()
+                            .setTitle('Role added!')
+                            .setDescription(`${message.author.tag} has been received the role "${roleAdd.name}"`)
+
+                        message.channel.send(EmbedDelete)
+                    }
+                }
+            }
+            // Remove role to user
+            else if (args[0].toLowerCase() == 'remove') {
+                if (message.content === 'racoon role remove'){
+                    message.channel.send('You did not specify a role!')
+                    return
+                } else {
+                    const roleremove = message.guild.roles.cache.get(args[1]) || message.guild.roles.cache.find(r => r.name == args[1])
+
+                    if (!roleremove) return message.channel.send("Couldn't remove that role!")
+
+                    if (message.guild.member(message.author).roles.cache.has(roleremove.id)) {
+                        message.guild.member(message.author).roles.remove(roleremove);
+                        const EmbedDelete = new Discord.MessageEmbed()
+                            .setTitle('Role removed!')
+                            .setDescription(`${message.author.tag} has been removed the role "${roleremove.name}"`)
+
+                        message.channel.send(EmbedDelete)
+                    } else {
+                        message.channel.send(`You did not have that role! ${message.author.tag}`)
+                    }
                 }
             }
         }
