@@ -95,9 +95,13 @@ class WebSocket {
             var text = req.body.text
 
             if(!_token || !channelid || !text)
+                // response status code indicates that the server cannot or will not process the request due to something that is perceived to be a
+                // client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
                 return res.sendStatus(400);
 
             if (!this.checkToken(_token))
+                // client error status response code indicates that the request has
+                // not been applied because it lacks valid authentication credentials for the target resource.
                 return res.sendStatus(401)
 
             var chan = this.client.guilds.cache.first().channels.cache.get(channelid)
@@ -106,8 +110,11 @@ class WebSocket {
             // send message into selected channel
             if (chan) {
                 chan.send(text)
+                // success status response code indicates that the request has succeeded. A 200 response is cacheable by default.
                 res.sendStatus(200)
             } else
+                // client error response code indicates that the server cannot produce a response matching the list of acceptable values
+                // defined in the request's proactive content negotiation headers, and that the server is unwilling to supply a default representation.
                 res.sendStatus(406)
         })
     }

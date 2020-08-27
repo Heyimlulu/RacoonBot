@@ -20,9 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb4cbc3c-c81a-4689-b2fb-f96678e64067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/utility/status.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/owner/shutdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/owner/username.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/utility/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/owner/status.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/ws/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/ws.js" beforeDir="false" afterPath="$PROJECT_DIR$/ws/ws.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,33 +61,23 @@
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.18.3" />
     <property name="javascript.nodejs.core.library.typings.version" value="12.12.54" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../Program Files/Git/git-cmd.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lucas\OneDrive\Documents\GitHub\racoon-bot\commands\owner" />
+      <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot" />
+      <recent name="C:\Users\lucas\OneDrive\Documents\GitHub\racoon-bot\stuffs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot\ws" />
       <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot\ws\img" />
       <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lucas\Documents\GitHub\racoon-bot" />
-      <recent name="C:\Users\lucas\OneDrive\Documents\GitHub\racoon-bot\stuffs" />
-    </key>
   </component>
   <component name="RunManager" selected="npm.racoonbot">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="racoonbot" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -144,6 +139,10 @@
       <workItem from="1598266223709" duration="3247000" />
       <workItem from="1598447596095" duration="2594000" />
       <workItem from="1598466783945" duration="1881000" />
+      <workItem from="1598540786093" duration="1354000" />
+      <workItem from="1598542475156" duration="55000" />
+      <workItem from="1598542735714" duration="17000" />
+      <workItem from="1598547372058" duration="1021000" />
     </task>
     <servers />
   </component>
@@ -174,9 +173,13 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.-350.1080.1880/-1080.-363.1080.1880@0.0.1920.1040" timestamp="1598027268487" />
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1598029348381">
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1598541921059">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-350.1080.1880/-1080.-363.1080.1880@0.0.1920.1040" timestamp="1598029348381" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.-350.1080.1880/-1080.-363.1080.1880@0.0.1920.1040" timestamp="1598541921059" />
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1598541436202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/1920.-350.1080.1880/-1080.-363.1080.1880@0.0.1920.1040" timestamp="1598541436202" />
   </component>
 </project>

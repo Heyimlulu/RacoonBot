@@ -4,7 +4,7 @@ const client = new Discord.Client();
 module.exports = {
     name: 'status',
     description: 'Change the status of the bot.',
-    category: 'utility',
+    category: 'owner',
     execute(message) {
 
         if (!message.content.startsWith('racoon2') || message.author.bot) return;

@@ -43,6 +43,15 @@ for (const file of commandFilesGeneral) {
     client.commands.set(command.name, command);
 }
 
+const commandFilesOwner = fs.readdirSync('./commands/owner').filter(file => file.endsWith('.js'));
+for (const file of commandFilesOwner) {
+    const command = require(`./commands/owner/${file}`);
+
+    // set a new item in the Collection
+    // with the key as the command name and the value as the exported module
+    client.commands.set(command.name, command);
+}
+
 // ==================================== On bot start ==================================== //
 
 client.on('ready', () => {
