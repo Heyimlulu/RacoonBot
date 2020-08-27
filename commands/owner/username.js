@@ -1,3 +1,4 @@
+/*
 module.exports = {
     name: 'username',
     description: 'Change the username of the bot.',
@@ -8,3 +9,5 @@ module.exports = {
         message.channel.send(`The username have been changed sucessfully to ${args.username}`);
     },
 };
+
+ */
