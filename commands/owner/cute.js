@@ -30,6 +30,7 @@ module.exports = {
                     .setThumbnail(User.displayAvatarURL())
                     .setColor("RANDOM")
 
+                message.delete()
                 message.channel.send(Embed)
             } else {
                 message.channel.send('You did not specified a user!')
