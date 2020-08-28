@@ -9,15 +9,11 @@
     {{!-- Pass token back to authenticate web request --}}
     <input type="hidden" name="token" value="{{ token }}" />
     {{!-- Channel selector --}}
-    <input name="channelid" />
-    {{!-- Channel selector --}}
-
     <select name="channelid">
         {{#each chans}}
             <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}
     </select>
-
     {{!-- Message text input --}}
     <input type="text" name="text" placeholder="TEXT">
     {{!-- Send button --}}

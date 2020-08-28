@@ -20,11 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb4cbc3c-c81a-4689-b2fb-f96678e64067" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/commands/owner/kill.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/commands/owner/cute.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/owner/shutdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/owner/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/owner/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/owner/username.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/owner/username.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ws/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/ws/views/index.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +74,15 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.racoonbot">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -153,6 +154,7 @@
       <workItem from="1598547372058" duration="1021000" />
       <workItem from="1598554065758" duration="456000" />
       <workItem from="1598554534710" duration="38000" />
+      <workItem from="1598633338466" duration="1160000" />
     </task>
     <servers />
   </component>
