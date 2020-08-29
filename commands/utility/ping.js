@@ -1,9 +1,16 @@
-//const Discord = require('discord.js');
+const Discord = require('discord.js');
+const client = new Discord.Client();
 
 module.exports = {
     name: 'ping',
     description: 'Ping the bot!',
     execute(message) {
+
+        /*
+        const msg = message.channel.send('Pinging...');
+
+        msg.edit(`Pong!\nLatency is ${Math.floor(msg.createdAt - message.createdAt)}ms\nAPI Latency is ${Math.round(client.ping)}ms`);
+        */
 
         /*
         // It sends the user "Pinging"
