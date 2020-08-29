@@ -6,6 +6,7 @@ const WS = require('./ws/ws')
 const client = new Discord.Client();
 
 client.commands = new Discord.Collection();
+client.aliases = new Discord.Collection()
 
 // ================================================================================================ //
 
@@ -77,7 +78,8 @@ client.on('ready', () => {
         'eating da gorbage',
         "don't touch my berries | my prefix is: racoon",
         'give me food and I will be grateful | my prefix is: racoon',
-        'with hooman'];
+        'with hooman',
+        'you can use racoon help for commands list'];
 
     let activityTypes = ['PLAYING','STREAMING','LISTENING','WATCHING']
     //let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]

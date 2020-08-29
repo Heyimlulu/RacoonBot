@@ -20,10 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb4cbc3c-c81a-4689-b2fb-f96678e64067" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/handler/command.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/owner/cute.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/cute.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/owner/love.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/love.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/utility/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/help.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +78,17 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.racoonbot">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="racoonbot" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -148,6 +162,7 @@
       <workItem from="1598689167959" duration="1428000" />
       <workItem from="1598690617877" duration="872000" />
       <workItem from="1598700291941" duration="456000" />
+      <workItem from="1598719707313" duration="3785000" />
     </task>
     <servers />
   </component>

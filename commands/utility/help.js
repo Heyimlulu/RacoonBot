@@ -1,24 +1,18 @@
-/*
 const Discord = require('discord.js');
 
 module.exports = {
     name: 'help',
-    description: 'Displays a list of commands or information about a command.',
-    execute(message, args) {
-        const Embed = new Discord.MessageEmbed()
-            .setColor('#FFCE00')
-            .setTitle('Commands list')
-            //.setAuthor('racoon bot#4764', 'https://cdn.discordapp.com/avatars/734426328002068481/6f46b18e9e16e51b17dc4249671be091.png?size=128', 'https://discord.com/')
-            .addField('racoon fact', 'Some value here', true)
-            .addField('racoon image', 'Some value here', true)
-            .addField('racoon say', 'Some value here', true)
-            .addField('racoon help', 'Some value here', true)
-            .addField('racoon info', 'Some value here', true)
-            .addField('racoon ping', 'Some value here', true)
-            .setThumbnail('https://cdn.discordapp.com/avatars/734426328002068481/6f46b18e9e16e51b17dc4249671be091.png?size=128')
+    description: 'Displays the list of commands for the bot.',
+    category: 'utility',
+    execute(message) {
 
-        message.channel.send(Embed);
+        const helpEmbed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setTitle('Commands list')
+            .addField('fun', '- avatar\n- cuteometer\n- love')
+            .addField('general', '- fact\n')
+            .addField('utility', '- help\n- info\n- ping\n- role\n- server\n- uptime\n- userinfo')
+
+        message.channel.send(helpEmbed)
     },
 };
-
- */
