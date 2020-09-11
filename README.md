@@ -11,19 +11,12 @@ You need to install **Node.js** on your computer to get this bot running
 ### Installing
 
 ```
-Clone this repository
-```
-
-### Updating
-
-```
-go to the repos directory
 npm install
 ```
 
 ### Running
 
-Enter your bot token in the *config.json* file and set a secret code to get access to the supersecret web interface
+Enter your bot token in the *config.json* file and set a secret code to get access to the supersecret web interface (<-- This only work for 1 server, mainly the first server you invite the bot)
 
 Now you can run the bot with
 
