@@ -10,6 +10,7 @@ module.exports = {
             'Sandwich',
             'Taboulet',
             'Croissant',
+            'Pain au chocolat',
             'Pizza'];
         var plat = plats[Math.floor(Math.random()*plats.length)];
 

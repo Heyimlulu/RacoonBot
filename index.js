@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 //const client = new Discord();
-const config = require("./config");
+const config = require("./json/config.json");
 const fs = require('fs');
 const WS = require('./ws/ws')
 const client = new Discord.Client();
+
+const activitiesJSON = require('./json/activities.json');
 
 client.commands = new Discord.Collection();
 
@@ -57,28 +59,7 @@ for (const file of commandFilesOwner) {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
-    // old script
-    /*
-    var activities = [
-        'Thief Simulator | my prefix is: racoon',
-        'Stealing food | my prefix is: racoon',
-        'Getting caught from stealing food | my prefix is: racoon'];
-    var activity = activities[Math.floor(Math.random()*activities.length)];
-
-    client.user.setActivity(activity);
-
-     */
-
-    var activities = [
-        'Thief Simulator | my prefix is: racoon',
-        'Stealing food',
-        'Getting caught from stealing food | my prefix is: racoon',
-        'with my racoon friends',
-        'eating da gorbage',
-        "don't touch my berries | my prefix is: racoon",
-        'give me food and I will be grateful | my prefix is: racoon',
-        'with hooman',
-        'you can use racoon help for commands list'];
+    var activities = activitiesJSON;
 
     let activityTypes = ['PLAYING','STREAMING','LISTENING','WATCHING']
     //let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]

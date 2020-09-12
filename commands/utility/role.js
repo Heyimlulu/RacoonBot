@@ -6,14 +6,16 @@ module.exports = {
     category: 'utility',
     execute(message, args) {
 
-        if (message.content === 'racoon role') {
+        var prefix = 'racoon';
+
+        if (message.content === `${prefix} role`) {
             const InfoEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setTitle('Role informations')
-                .addField('racoon role [create] [Role name] [#Hex color]', 'Create new role')
-                .addField('racoon role [delete] [Role name]', 'Delete existing role')
-                .addField('racoon role [add] [Role name]', 'Add role to user')
-                .addField('racoon role [remove] [Role name]', 'Remove role to user')
+                .addField('racoon role create Role_name #Hex_Color [<= example: #111000]', 'Create new role')
+                .addField('racoon role delete Role_name', 'Delete existing role')
+                .addField('racoon role add Role_name', 'Add role to user')
+                .addField('racoon role remove Role_name', 'Remove role to user')
             message.channel.send(InfoEmbed)
         }  else {
 
@@ -56,16 +58,18 @@ module.exports = {
 
                 // Display the new created role in a MessageEmbed
                 const Embed = new Discord.MessageEmbed()
-                    .setTitle('New role!')
+                    .setTitle('New role assigned!')
                     .setDescription(`${message.author.tag} has created the role "${rName}"\n with Hex color code: ${rColor}`)
                     .setColor(rColor)
 
                 // Send the MessageEmbed
                 message.channel.send(Embed)
             }
-            // Delete role from server. REQUIRE MANAGE ROLE PERMISSION
+
+            // Delete role from server.
+            // REQUIRE MANAGE ROLE PERMISSION
             else if (args[0].toLowerCase() == 'delete') {
-                if (message.content === 'racoon role delete'){
+                if (message.content === `${prefix} role delete`){
                     message.channel.send('You did not specify a role!')
                     return
                 } else {
@@ -86,9 +90,10 @@ module.exports = {
                     message.channel.send(EmbedDelete)
                 }
             }
+
             // Add role to user
             else if (args[0].toLowerCase() == 'add') {
-                if (message.content === 'racoon role add'){
+                if (message.content === `${prefix} role add`){
                     message.channel.send('You did not specify a role!')
                     return
                 } else {
@@ -108,9 +113,10 @@ module.exports = {
                     }
                 }
             }
+
             // Remove role to user
             else if (args[0].toLowerCase() == 'remove') {
-                if (message.content === 'racoon role remove'){
+                if (message.content === `${prefix} role remove`){
                     message.channel.send('You did not specify a role!')
                     return
                 } else {
