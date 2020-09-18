@@ -1,11 +1,13 @@
 const Discord = require('discord.js');
-//const client = new Discord();
+//const client = new Discord(); <-- old const
 const config = require("./json/config.json");
 const fs = require('fs');
 const WS = require('./ws/ws')
 const client = new Discord.Client();
 
-const activitiesJSON = require('./json/activities.json');
+// JSON file for activities status
+const playingJSON = require('./json/playing.json');
+const streamingJSON = require('./json/streaming.json');
 
 client.commands = new Discord.Collection();
 
@@ -59,16 +61,26 @@ for (const file of commandFilesOwner) {
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`)
 
-    var activities = activitiesJSON;
-
-    let activityTypes = ['PLAYING','STREAMING','LISTENING','WATCHING']
-    //let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
-
-    // Set new activity after few minutes
     setInterval(() => {
-        let activity = activities[Math.floor(Math.random()*(activities.length - 1) + 1)];
-        client.user.setActivity(activity, {type: "PLAYING"});
-    }, 600000); // Runs this every 10 minutes.
+        let activityTypes = ['PLAYING','STREAMING']
+        let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
+
+        if (randomType == 'PLAYING'){
+
+            // set var for playingJSON file
+            var playing = playingJSON;
+
+            let activity = playing[Math.floor(Math.random()*(playing.length - 1) + 1)];
+            client.user.setActivity(activity, {type: "PLAYING"});
+        } else if (randomType == 'STREAMING') {
+
+            // set var for streamingJSON file
+            var streaming = streamingJSON;
+
+            let activity = streaming[Math.floor(Math.random()*(streaming.length - 1) + 1)];
+            client.user.setActivity(activity, {type: "STREAMING", url: "https://www.twitch.tv/Heyimyuki_", name: "Heyimyuki_ on Twitch"});
+        }
+    }, 600000) // <-- run this every 10 minutes
 });
 
 // ================================= On message received ================================= //
