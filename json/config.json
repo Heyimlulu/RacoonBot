@@ -1,8 +1,8 @@
 {
-  "token": "",
-  "prefix": "racoon ",
+  "token": "NzQ3NTE3NDY3ODkwNDE3Nzc1.X0QB5A.7qm2LEakpCl_MTn_9lGxUmI0tM4",
+  "prefix": "racoondev ",
   "ws": {
     "port": 8080,
-    "token": ""
+    "token": "1234"
   }
 }

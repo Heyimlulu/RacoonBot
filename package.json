@@ -1,7 +1,8 @@
 {
   "name": "racoon-bot",
+  "author": "Heyimlulu",
   "version": "1.0.0",
-  "description": "",
+  "description": "A multifunction discord bot",
   "main": "index.js",
   "dependencies": {
     "ascii-table": "0.0.9",

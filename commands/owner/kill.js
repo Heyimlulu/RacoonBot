@@ -1,17 +1,19 @@
-/*
 module.exports = {
     name: 'kill',
-    description: `Kill the bot. Didn't actually kill it btw`,
+    description: `Shutdown the bot`,
     category: 'owner',
     execute(message) {
 
         if (message.author.id !== '265896171384340480') {
-            message.channel.send(`Sorry, you can't do that ${message.author.tag}.`)
+            message.channel.send(`Sorry, you can't do that ${message.author.tag}!`)
             return
         }
 
-        message.channel.send('kk bye ty', { files: ['https://cdn.discordapp.com/attachments/532980995767533568/553656409452183552/bad_things_happen_to_good_people.jpg']});
+        setTimeout(() => {
+            process.exit();
+        }, 2000)
+        console.log('\x1b[31m\x1b[47m\x1b[5mSHUTING DOWN!!!!!\x1b[0m');
+        message.channel.send("Ok I'm leaving bye", { files: ['https://cdn.discordapp.com/attachments/582678478994800668/755157949458153532/20200914_202738.jpg']});
+        console.log('\x1b[31m\x1b[47m\x1b[5mSHUTING DOWN!!!!!\x1b[0m');
     },
 };
-
- */
