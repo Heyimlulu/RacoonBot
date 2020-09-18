@@ -16,12 +16,13 @@ npm install
 
 ### Running
 
-Enter your bot token in the *config.json* file and set a secret code to get access to the supersecret web interface (<-- This only work for 1 server, mainly the first server you invite the bot)
+Enter your bot token in the *config.json* file and set a secret code to get access to the supersecret web interface 
+The WebSocket only work for 1 server, mainly the first server you invite the bot (BETA)
 
 Now you can run the bot with
 
 ```
-npm test
+npm start
 ```
 
 ## Using my bot
