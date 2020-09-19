@@ -1,4 +1,3 @@
-/*
 const fetch = require('node-fetch');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        fetch('https://api.imgur.com/3/tags', {
+        fetch('https://api.imgur.com/3/gallery/search/viral/top/0?q=racoon', {
             headers: { 'Authorization': 'Client-ID b4b6b4e0f8b1631' },
         }).then((response) => {
             return response.json();
@@ -17,9 +16,7 @@ module.exports = {
 
             const i = Math.floor((Math.random() * response.data.length));
 
-            message.channel.send(`**${response.data[i]}**\n${response.data[i]}`);
+            message.channel.send(`**${response.data[i].title}**\n${response.data[i].link}`);
         });
     },
 };
-
- */

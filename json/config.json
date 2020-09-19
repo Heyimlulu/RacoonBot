@@ -1,8 +1,8 @@
 {
-  "token": "NzQ3NTE3NDY3ODkwNDE3Nzc1.X0QB5A.7qm2LEakpCl_MTn_9lGxUmI0tM4",
-  "prefix": "racoondev ",
+  "token": "your-discord-bot-token",
+  "prefix": "racoon ",
   "ws": {
     "port": 8080,
-    "token": "1234"
+    "token": "your-websocket-token"
   }
 }

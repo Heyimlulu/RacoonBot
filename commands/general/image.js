@@ -1,3 +1,4 @@
+/*
 module.exports = {
     name: 'image',
     description: 'Image!',
@@ -8,3 +9,5 @@ module.exports = {
         message.channel.send( {files: ["./images/" + imageNumber + ".jpg"]})
     },
 };
+
+ */

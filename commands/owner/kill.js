@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'kill',
+    name: 'shutdown',
     description: `Shutdown the bot`,
     category: 'owner',
     execute(message) {
@@ -11,7 +11,8 @@ module.exports = {
 
         setTimeout(() => {
             process.exit();
-        }, 2000)
+        }, 5000)
+
         console.log('\x1b[31m\x1b[47m\x1b[5mSHUTING DOWN!!!!!\x1b[0m');
         message.channel.send("Ok I'm leaving bye", { files: ['https://cdn.discordapp.com/attachments/582678478994800668/755157949458153532/20200914_202738.jpg']});
         console.log('\x1b[31m\x1b[47m\x1b[5mSHUTING DOWN!!!!!\x1b[0m');
