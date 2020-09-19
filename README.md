@@ -31,6 +31,10 @@ Click [here](https://discord.com/oauth2/authorize?client_id=734426328002068481&p
 
 ## API
 
+- imgur
+
+## Dependencies
+
 - discordjs
 
 - express
@@ -38,6 +42,8 @@ Click [here](https://discord.com/oauth2/authorize?client_id=734426328002068481&p
 - express-handlebars
 
 - body-parser
+
+- node-fetch
 
 ## Author
 
