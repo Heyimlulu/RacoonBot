@@ -9,9 +9,9 @@ module.exports = {
         const helpEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle('Commands list')
-            .addField('fun', '- avatar\n- cuteometer\n- love\n- imgur')
+            .addField('fun', '- cuteometer\n- love\n- imgur')
             .addField('general', '- fact\n')
-            .addField('utility', '- help\n- info\n- ping\n- role\n- server\n- uptime\n- userinfo')
+            .addField('utility', '- help\n- info\n- ping\n- role\n- server\n- stats\n- uptime\n- upvote')
 
         message.channel.send(helpEmbed)
     },
