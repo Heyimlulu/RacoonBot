@@ -11,7 +11,7 @@ module.exports = {
 
         const Embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
-            .setTitle('🏓 Ping 🏓')
+            .setTitle('Pong 🏓')
             .setDescription("Your ping is " + `${ping}`)
             .setTimestamp()
 

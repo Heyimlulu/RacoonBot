@@ -8,7 +8,7 @@ module.exports = {
         const UpvoteEmbed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle('Vote for my bot')
-            .setAuthor(message.author.username)
+            .setAuthor('RacoonBot')
             .setDescription('You can vote for my bot if you like it!')
             // .addField('top.gg', 'https://top.gg/bot/.../vote')
             .addField('Discordbotlist.com', 'https://discordbotlist.com/bots/racoonbot/upvote')

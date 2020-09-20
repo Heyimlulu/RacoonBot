@@ -7,11 +7,12 @@ module.exports = {
     execute(message) {
 
         const helpEmbed = new Discord.MessageEmbed()
+            .setAuthor('RacoonBot')
             .setColor("RANDOM")
             .setTitle('Commands list')
             .addField('fun', '- cuteometer\n- love\n- imgur')
             .addField('general', '- fact\n')
-            .addField('utility', '- help\n- info\n- ping\n- role\n- server\n- stats\n- uptime\n- upvote')
+            .addField('utility', '- help\n- info\n- ping\n- role\n- serverinfo\n- stats\n- uptime\n- upvote\n- userinfo')
 
         message.channel.send(helpEmbed)
     },

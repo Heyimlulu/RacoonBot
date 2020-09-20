@@ -6,7 +6,7 @@ module.exports = {
     execute(message) {
         const Embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
-            .setTitle('Informations')
+            .setTitle('Information')
             .setDescription('RacoonBot made with 💛 by Ｙｕｋｉ#0001')
             .setTimestamp()
 

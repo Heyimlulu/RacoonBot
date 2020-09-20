@@ -4,32 +4,31 @@ module.exports = {
     name: 'userinfo',
     description: 'Display info box for a user!',
     execute(message) {
-        const UserInfo = new Discord.MessageEmbed()
-
         if(!message.mentions.users.first()) {
-            UserInfo.setAuthor(message.author.username)
-                .setDescription("This is the user's info")
+            const userInfo = new Discord.MessageEmbed()
+                .setAuthor('RacoonBot')
+                .setTitle('User info')
                 .setColor("RANDOM")
                 .setThumbnail(message.author.displayAvatarURL())
-                // Display the full username
-                // Discriminator is for the user discord number
+                // Display the full username and Discriminator is for the user discord number
                 .addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
                 .addField("ID", message.author.id)
                 .addField("Created at", message.author.createdAt)
-            message.channel.send(UserInfo)
+            message.channel.send(userInfo)
         }
         else
         {
             // Display the avatar info for the mentioned user
-            const User = message.mentions.users.first()
-            UserInfo.setAuthor(User.username)
-                .setDescription("This is the user's info")
+            const mentionUser = message.mentions.users.first()
+            const mentionUserinfo = new Discord.MessageEmbed()
+                .setAuthor('RacoonBot')
+                .setTitle('User info')
                 .setColor("RANDOM")
-                .setThumbnail(User.displayAvatarURL())
-                .addField("Full Username", `${User.tag}`)
-                .addField("ID", User.id)
-                .addField("Created at", User.createdAt)
-            message.channel.send(UserInfo)
+                .setThumbnail(mentionUser.displayAvatarURL())
+                .addField("Full Username", `${mentionUser.tag}`)
+                .addField("ID", mentionUser.id)
+                .addField("Created at", mentionUser.createdAt)
+            message.channel.send(mentionUserinfo)
         }
     },
 };
