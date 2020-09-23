@@ -11,7 +11,9 @@ module.exports = {
         if (message.content === `${prefix} role`) {
             const InfoEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
+                .setAuthor('RacoonBot')
                 .setTitle('Role informations')
+                .setDescription('DISCLAIMER : The add role command will not work with blank space. Add an underscore if you want longer role')
                 .addField('racoon role create Role_name #Hex_Color [<= example: #111000]', 'Create new role')
                 .addField('racoon role delete Role_name', 'Delete existing role')
                 .addField('racoon role add Role_name', 'Add role to user')

@@ -78,7 +78,7 @@ client.on('ready', () => {
             var streaming = streamingJSON;
 
             let activity = streaming[Math.floor(Math.random()*(streaming.length - 1) + 1)];
-            client.user.setActivity(activity, {type: "STREAMING", url: "https://www.twitch.tv/Heyimyuki_", name: "Heyimyuki_ on Twitch"});
+            client.user.setActivity(activity, {type: "STREAMING", url: "https://www.twitch.tv/RacoonBot_", name: "RacoonBot_ on Twitch"});
         }
     }, 600000) // <-- run this every 10 minutes
 });
