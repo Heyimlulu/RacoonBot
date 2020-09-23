@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 const fetch = require('node-fetch');
 
 module.exports = {
@@ -15,7 +16,13 @@ module.exports = {
 
             const i = Math.floor((Math.random() * response.all.length));
 
-            message.channel.send(`**${response.all[i].text}**`);
+            const catfactsEmbed = new Discord.MessageEmbed()
+                .setColor("RANDOM")
+                .setAuthor('RacoonBot')
+                .setTitle('Random cat facts')
+                .setDescription(response.all[i].text)
+
+            message.channel.send(catfactsEmbed);
         });
     },
 };
