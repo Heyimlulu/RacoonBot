@@ -7,10 +7,10 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        let news = message.content.split('racoondev news').join("")
+        let news = message.content.split('racoon news').join("")
 
         if (news == '') {
-            message.channel.send("C'est vide zebi")
+            message.channel.send("No items specified!")
         } else {
 
             fetch(`https://newsapi.org/v2/everything?q=${news}&from=2020-09-22&to=2020-09-22&sortBy=popularity&apiKey=3646c09c747e424fb89b70f22ab3a384`,

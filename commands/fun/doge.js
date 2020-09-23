@@ -7,16 +7,12 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        let toTranslate = message.content.split('racoondev doge').join("")
+        let toTranslate = message.content.split('racoon doge').join("")
 
         fetch(`https://api.funtranslations.com/translate/doge.json?text=${toTranslate}`).then((response) => {
             return response.json();
         }).then((response) => {
-
-            if(response.error.code == '429') {
-                message.channel.send('Too Many Requests: Rate limit of 5 requests per hour exceeded. Please wait for 1 hour before using that command.')
-            } else {
-
+            try {
                 const translationEmbed = new Discord.MessageEmbed()
                     .setColor("RANDOM")
                     .setAuthor('RacoonBot')
@@ -25,6 +21,8 @@ module.exports = {
                     .addField('Doge Language', response.contents.translated, false)
 
                 message.channel.send(translationEmbed);
+            } catch {
+                message.channel.send('No input specified or too Many Requests.')
             }
         })
     }
