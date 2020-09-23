@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'catfacts',
-    description: 'Share some facts about cats!',
+    description: 'Share some random facts about cats!',
     category: 'fun',
     execute(message) {
 
