@@ -33,14 +33,6 @@ Click [here](https://discord.com/oauth2/authorize?client_id=734426328002068481&p
 
 - imgur
 
-- adviceslip
-
-- cat-fact (herokuapp)
-
-- taco-randomizer (herokuapp)
-
-- funtranslations
-
 ## Dependencies
 
 - discordjs
