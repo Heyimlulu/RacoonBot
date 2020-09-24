@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0442bf26-0ad8-4498-9cee-dc0146edcfd9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/commands/fun/doge.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/doge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands/fun/news.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/news.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/fun/avatar.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/avatar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/fun/imgur.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/fun/imgur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/utility/help.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/help.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/commands/utility/stats.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/stats.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/utility/uptime.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/uptime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commands/utility/userinfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/commands/utility/userinfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +37,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Haha-yes" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -42,10 +50,48 @@
       <option name="presentableId" value="Default" />
       <updated>1600883155302</updated>
       <workItem from="1600883156933" duration="655000" />
+      <workItem from="1600886622890" duration="43000" />
+      <workItem from="1600887201515" duration="548000" />
+      <workItem from="1600923283739" duration="2884000" />
+      <workItem from="1600960875259" duration="4212000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1600963524912">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600963524912" />
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1600887753718">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600887753718" />
+    <state width="1877" height="295" key="GridCell.Tab.0.center" timestamp="1600887753718">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.center/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600887753718" />
+    <state width="1877" height="295" key="GridCell.Tab.0.left" timestamp="1600887753718">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.left/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600887753718" />
+    <state width="1877" height="295" key="GridCell.Tab.0.right" timestamp="1600887753718">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600887753718" />
+    <state x="461" y="184" key="SettingsEditor" timestamp="1600924367503">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="461" y="184" key="SettingsEditor/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600924367503" />
+    <state x="0" y="0" width="1403" height="1067" key="dock-window-1" timestamp="1600887632942">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="0" y="0" width="1403" height="1067" key="dock-window-1/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600887632942" />
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1600963074969">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080/-1080.-463.1080.1920/1920.-464.1080.1920@0.0.1920.1080" timestamp="1600963074969" />
   </component>
 </project>

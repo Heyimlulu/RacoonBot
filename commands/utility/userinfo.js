@@ -10,15 +10,13 @@ module.exports = {
                 .setTitle('User info')
                 .setColor("RANDOM")
                 .setThumbnail(message.author.displayAvatarURL())
-                // Display the full username and Discriminator is for the user discord number
-                .addField("Full Username", `${message.author.username}#${message.author.discriminator}`)
-                .addField("ID", message.author.id)
-                .addField("Created at", message.author.createdAt)
+                .addField("Full Username", `${message.author.username}#${message.author.discriminator}`, false)
+                .addField("ID", message.author.id, false)
+                .addField("Created at", message.author.createdAt, false)
             message.channel.send(userInfo)
         }
         else
         {
-            // Display the avatar info for the mentioned user
             const mentionUser = message.mentions.users.first()
             const mentionUserinfo = new Discord.MessageEmbed()
                 .setAuthor('RacoonBot')

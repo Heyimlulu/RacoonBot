@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const client = new Discord.Client()
 const os = require('os');
+const { Command } = require('discord-akairo');
 
 module.exports = {
     name: 'stats',
@@ -36,9 +36,9 @@ module.exports = {
             .setColor('RANDOM')
             .setTitle('Bot stats')
             .setAuthor('RacoonBot')
-            // .addField('Servers', client.guilds.cache.size, false)
-            // .addField('Channels', client.channels.cache.size, false)
-            // .addField('Users', client.users.cache.size, false)
+            // .addField('Servers', this.client.guilds.cache.size, false)
+            // .addField('Channels', this.client.channels.cache.size, false)
+            // .addField('Users', this.client.users.cache.size, false)
             .addField('Uptime', dateString, false)
             .addField('Ram usage', `${bytesToSize(process.memoryUsage().heapUsed)}/${bytesToSize(os.totalmem)}`, false)
             .addField('CPU', `${os.cpus()[0].model} (${os.cpus().length} core)`, false)
@@ -49,7 +49,7 @@ module.exports = {
             .addField('Discord.js version', '12.2.0', false)
             .setTimestamp();
 
-        return message.channel.send(statsEmbed);
+        message.channel.send(statsEmbed);
 
     }
 };

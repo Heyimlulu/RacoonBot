@@ -1,3 +1,4 @@
+/**
 const Discord = require('discord.js');
 
 module.exports = {
@@ -6,7 +7,6 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        // Display the menu in a MessageEmbed
         // Display the avatar info for the actual user
         const Embed = new Discord.MessageEmbed()
         const roles = []
@@ -33,3 +33,4 @@ module.exports = {
             }
     },
 };
+ **/

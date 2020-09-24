@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-//const client = new Discord(); <-- old const
 const config = require("./json/config.json");
 const fs = require('fs');
 const WS = require('./ws/ws')
@@ -59,8 +58,13 @@ for (const file of commandFilesOwner) {
 // ==================================== On bot start ==================================== //
 
 client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`)
 
+    // Send stats to the console
+    console.log('===========[ READY ]===========');
+    console.log(`\x1b[32mLogged in as \x1b[34m${client.user.tag}\x1b[0m! (\x1b[33m${client.user.id}\x1b[0m)`)
+    console.log(`Ready to serve in \x1b[33m${client.channels.cache.size}\x1b[0m channels on \x1b[33m${client.guilds.cache.size}\x1b[0m servers, for a total of \x1b[33m${client.users.cache.size}\x1b[0m users.`);
+    console.log('===========[ READY ]===========');
+    
     setInterval(() => {
         let activityTypes = ['PLAYING','STREAMING']
         let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
@@ -80,7 +84,7 @@ client.on('ready', () => {
             let activity = streaming[Math.floor(Math.random()*(streaming.length - 1) + 1)];
             client.user.setActivity(activity, {type: "STREAMING", url: "https://www.twitch.tv/RacoonBot_", name: "RacoonBot_ on Twitch"});
         }
-    }, 600000) // <-- run this every 10 minutes
+    }, 1800000) // <-- run this every 30 minutes
 });
 
 // ================================= On message received ================================= //
