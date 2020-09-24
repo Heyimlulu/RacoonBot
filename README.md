@@ -51,4 +51,4 @@ Click [here](https://discord.com/oauth2/authorize?client_id=734426328002068481&p
 
 ## License
 
-Licensed under the [MIT License](https://github.com/Heyimlulu/RacoonBot/blob/master/LICENSE)
+Licensed under the [AGPL-3.0 License](https://github.com/Heyimlulu/RacoonBot/blob/master/LICENSE)
