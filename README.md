@@ -27,11 +27,15 @@ npm start
 
 ## Using my bot
 
-Click [here](https://discord.com/oauth2/authorize?client_id=734426328002068481&permissions=8&scope=bot) for inviting **Racoon Bot** on your server and enjoy its full feature
+[Discord Bots Lists](https://discord.ly/racoonbot)
 
 ## API
 
 - imgur
+
+- giphy
+
+- reddit
 
 ## Dependencies
 
