@@ -31,11 +31,11 @@ npm start
 
 ## API
 
-- imgur
+- [imgur](https://imgur.com/)
 
-- giphy
+- [giphy](https://giphy.com/)
 
-- reddit
+- [reddit](https://www.reddit.com/)
 
 ## Dependencies
 
