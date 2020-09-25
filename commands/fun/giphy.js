@@ -1,19 +1,17 @@
 const fetch = require('node-fetch');
 
 module.exports = {
-    name: 'imgur',
-    description: 'Send some images from imgur!',
+    name: 'giphy',
+    description: 'Send some animated images from giphy!',
     category: 'fun',
     execute(message) {
 
-        let imgurSearch = message.content.split('racoon imgur').join("")
+        let giphySearch = message.content.split('racoon giphy').join("")
 
-        if (imgurSearch == '') {
+        if (giphySearch == '') {
             message.reply("You did not specified anything!");
         } else {
-            fetch(`https://api.imgur.com/3/gallery/search/viral/top/0?q=${imgurSearch}`, {
-                headers: {'Authorization': 'Client-ID b4b6b4e0f8b1631'},
-            }).then((response) => {
+            fetch(`https://api.giphy.com/v1/gifs/search?api_key=ui3ZqsloOOlzo7mcfjhWcwOc89vgo9u0&q=${giphySearch}`).then((response) => {
                 return response.json();
             }).then((response) => {
                 if (response.success == 'false')
@@ -21,7 +19,7 @@ module.exports = {
 
                 const i = Math.floor((Math.random() * response.data.length));
 
-                message.channel.send(`**${response.data[i].title}**\n${response.data[i].link}`);
+                message.channel.send(`**${response.data[i].title}**\n${response.data[i].url}`);
             });
         }
     },

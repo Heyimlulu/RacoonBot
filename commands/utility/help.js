@@ -10,7 +10,7 @@ module.exports = {
             .setAuthor('RacoonBot')
             .setColor("RANDOM")
             .setTitle('Commands list')
-            .addField('fun', '- advice\n- catfacts\n- cuteometer\n- love\n- imgur')
+            .addField('fun', '- advice\n- catfacts\n- cuteometer\n- giphy\n- imgur\n- love\n- reddit')
             .addField('general', '- fact\n')
             .addField('utility', '- info\n- ping\n- role\n- serverinfo\n- stats\n- upvote\n- userinfo')
 
