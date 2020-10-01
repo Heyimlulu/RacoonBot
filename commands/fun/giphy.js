@@ -9,7 +9,7 @@ module.exports = {
         let giphySearch = message.content.split('racoon giphy').join("")
 
         if (giphySearch == '') {
-            message.reply("You did not specified anything!");
+            message.reply("Invalid search argument");
         } else {
             fetch(`https://api.giphy.com/v1/gifs/search?api_key=ui3ZqsloOOlzo7mcfjhWcwOc89vgo9u0&q=${giphySearch}`).then((response) => {
                 return response.json();

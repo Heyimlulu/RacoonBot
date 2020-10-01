@@ -9,7 +9,7 @@ module.exports = {
         let imgurSearch = message.content.split('racoon imgur').join("")
 
         if (imgurSearch == '') {
-            message.reply("You did not specified anything!");
+            message.reply("Invalid search argument");
         } else {
             fetch(`https://api.imgur.com/3/gallery/search/viral/top/0?q=${imgurSearch}`, {
                 headers: {'Authorization': 'Client-ID b4b6b4e0f8b1631'},

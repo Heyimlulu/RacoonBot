@@ -6,59 +6,167 @@ module.exports = {
     description: 'Share stats for a steam user',
     category: 'fun',
     execute(message) {
-        // 76561198034572288
-        let steamSearch = message.content.split('racoondev steam').join("")
+
+        let steamSearch = message.content.split('racoon steam').join("")
 
         if (steamSearch == '') {
             message.reply("Invalid steamID!");
         } else {
+            // Get player summaries
             fetch(`http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=51A077A7E3AAED89CDD9946AE5560A4C&steamids=${steamSearch}`)
                 .then((response) => {
-                    return response.json();
+                    return response.json(); // <-- return a json response
                 }).then((response) => {
 
-                    if (response.response.players[0].communityvisibilitystate == 1) {
-                        var stateProfile = 'Private';
-                    }
-                    if (response.response.players[0].communityvisibilitystate == 3) {
-                        var stateProfile = 'Public';
-                    }
+                // Decode player country, state and city
+                fetch('https://raw.githubusercontent.com/Holek/steam-friends-countries/master/data/steam_countries.json')
+                    .then((response) => {
+                        return response.json(); // <-- return a json response
+                    }).then((responseCheck) => {
 
-                    // if (response.response.players[0].loccountrycode == '' && response.response.players[0].locstatecode == '' && response.response.players[0].loccityid == ''){
-                    //
-                    // }
+                    // Get friend list
+                    fetch(`http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=51A077A7E3AAED89CDD9946AE5560A4C&steamid=${steamSearch}&relationship=friend`)
+                        .then((response) => {
+                            return response.json(); // <-- return a json file
+                        }).then((responseFriend) => {
 
-                    let unix_timestamp = response.response.players[0].lastlogoff;
-                    // Create a new JavaScript Date object based on the timestamp
-                    // multiplied by 1000 so that the argument is in milliseconds, not seconds.
-                    var dateLogoff = new Date(unix_timestamp * 1000);
-                    // Hours part from the timestamp
-                    var hours = dateLogoff.getHours() + 1;
-                    // Minutes part from the timestamp
-                    var minutes = "0" + dateLogoff.getMinutes();
-                    // Seconds part from the timestamp
-                    var seconds = "0" + dateLogoff.getSeconds();
-                    // Will display time in 10:30:23 format
-                    var lastlogoffTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+                        // Get owned games
+                        fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=51A077A7E3AAED89CDD9946AE5560A4C&steamid=${steamSearch}&format=json`)
+                            .then((response) => {
+                                return response.json(); // <-- return a json file
+                            }).then((responseGame) => {
 
-                    const unixTime = response.response.players[0].timecreated;
-                    const dateCreatedat = new Date(unixTime*1000);
+                            // Get player bans
+                            fetch(`http://api.steampowered.com/ISteamUser/GetPlayerBans/v1/?key=51A077A7E3AAED89CDD9946AE5560A4C&steamids=${steamSearch}`)
+                                .then((response) => {
+                                    return response.json(); // <-- return a json file
+                                }).then((responseVAC) => {
 
-                    const steamEmbed = new Discord.MessageEmbed()
-                        .setColor("RANDOM")
-                        .setTitle(response.response.players[0].personaname)
-                        .setDescription(response.response.players[0].realname)
-                        .setURL(response.response.players[0].profileurl)
-                        .addField('SteamID', response.response.players[0].steamid, false)
-                        .addField('Profile visibility', stateProfile, false)
-                        .addField('Country code', response.response.players[0].loccountrycode, true)
-                        .addField('State code', response.response.players[0].locstatecode, true)
-                        .addField('City code', response.response.players[0].loccityid, true)
-                        .addField('Last logoff', lastlogoffTime, false)
-                        .addField('Created at', dateCreatedat, false)
-                     .setThumbnail(response.response.players[0].avatarfull)
+                                // Get recently played game
+                                fetch(`http://api.steampowered.com/IPlayerService/GetRecentlyPlayedGames/v0001/?key=51A077A7E3AAED89CDD9946AE5560A4C&steamid=${steamSearch}&format=json`)
+                                    .then((response) => {
+                                        return response.json(); // <-- return a json file
+                                    }).then((responseRecentGame) => {
 
-                message.channel.send(steamEmbed);
+                                    // Get the recent game for the user
+                                    if (responseRecentGame.response.hasOwnProperty('games')){
+                                        var recentGame = responseRecentGame.response.games[0].name;
+                                    } else {
+                                        var recentGame = 'unknown';
+                                    }
+
+                                    // Check if the player has a vac ban in his profile
+                                    if (responseVAC.hasOwnProperty('players')) {
+                                        var vacCheck = responseVAC.players.VACBanned;
+
+                                        if (vacCheck != 'false') {
+                                            var vacBanned = 'no';
+                                        } else {
+                                            var vacBanned = 'yes';
+                                        }
+                                    } else {
+                                        var varCheck = 'unknown';
+                                    }
+
+                                    // Count how many games the player have
+                                    if (responseGame.response.hasOwnProperty('game_count')) {
+                                        var gameCount = responseGame.response.game_count;
+                                    } else {
+                                        var gameCount = 'unknown';
+                                    }
+
+                                    // Count how many friends the player have
+                                    if (responseFriend.hasOwnProperty('friendslist')) {
+                                        // Friends counter
+                                        function length(obj) {
+                                            return Object.keys(obj).length;
+                                        }
+
+                                        // Store the result in a variable
+                                        var friendsCount = length(responseFriend.friendslist.friends);
+                                    } else {
+                                        var friendsCount = 'unknown';
+                                    }
+
+                                    // store output from the steam api in a variable
+                                    //console.log(response.response.players[0].hasOwnProperty('loccountrycode'));
+                                    if (response.response.players[0].hasOwnProperty('loccountrycode')) {
+                                        var countryDecode = response.response.players[0].loccountrycode;
+                                        var country = responseCheck[countryDecode].name;
+                                    } else {
+                                        var country = 'Unknown';
+                                    }
+
+                                    //console.log(response.response.players[0].hasOwnProperty('locstatecode'));
+                                    if (response.response.players[0].hasOwnProperty('locstatecode')) {
+                                        var stateDecode = response.response.players[0].locstatecode;
+                                        var state = responseCheck[countryDecode].states[stateDecode].name;
+                                    } else {
+                                        var state = 'Unknown';
+                                    }
+
+                                    //console.log(response.response.players[0].hasOwnProperty('loccityid'));
+                                    if (response.response.players[0].hasOwnProperty('loccityid')) {
+                                        var cityDecode = response.response.players[0].loccityid;
+                                        var city = responseCheck[countryDecode].states[stateDecode].cities[cityDecode].name;
+                                    } else {
+                                        var city = 'Unknown';
+                                    }
+
+                                    // Get the exact country, state and city with the variables
+                                    /*
+                                    console.log(responseCheck[country].name);
+                                    console.log(responseCheck[country].states[state].name);
+                                    console.log(responseCheck[country].states[state].cities[city].name);
+                                     */
+
+                                    // Check if the profile is public or private
+                                    if (response.response.players[0].communityvisibilitystate == 1) {
+                                        var stateProfile = 'Private';
+                                    }
+                                    if (response.response.players[0].communityvisibilitystate == 3) {
+                                        var stateProfile = 'Public';
+                                    }
+
+                                    // Display the last time the user was seen online and set it in a variable that will convert into a readable format for human
+                                    let unix_timestamp = response.response.players[0].lastlogoff;
+
+                                    // Create a new JavaScript Date object based on the timestamp
+                                    var dateLogoff = new Date(unix_timestamp * 1000); // multiplied by 1000 so that the argument is in milliseconds and not seconds
+                                    var hours = dateLogoff.getHours() + 1; // Hours
+                                    var minutes = "0" + dateLogoff.getMinutes(); // Minutes
+                                    var seconds = "0" + dateLogoff.getSeconds(); // Seconds
+                                    var lastlogoffTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2); // Will display time in 00:00:00 format
+
+                                    // Display the date when the user created his profile and convert it into a correct and readable date format
+                                    const unixTime = response.response.players[0].timecreated;
+                                    const dateCreatedat = new Date(unixTime * 1000);
+
+                                    // Display result in a Message Embed
+                                    const steamEmbed = new Discord.MessageEmbed()
+                                        .setColor("RANDOM")
+                                        .setTitle(response.response.players[0].personaname)
+                                        .setDescription(response.response.players[0].realname)
+                                        .setURL(response.response.players[0].profileurl)
+                                        .addField('SteamID', response.response.players[0].steamid, false)
+                                        .addField('Profile visibility', stateProfile, false)
+                                        .addField('Country', country, true)
+                                        .addField('State', state, true)
+                                        .addField('City', city, true)
+                                        .addField('Friends count', friendsCount, true)
+                                        .addField('Games count', gameCount, true)
+                                        .addField('VAC banned?', vacBanned, true)
+                                        .addField('Recent game', recentGame, false)
+                                        .addField('Last logoff', lastlogoffTime, false)
+                                        .addField('Created at', dateCreatedat, false)
+                                        .setThumbnail(response.response.players[0].avatarfull)
+
+                                    message.channel.send(steamEmbed);
+                                })
+                            })
+                        })
+                    })
+                })
             })
         }
     }

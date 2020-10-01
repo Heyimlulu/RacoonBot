@@ -10,7 +10,7 @@ module.exports = {
         let redditSearch = message.content.split('racoon reddit').join('').trim()
         
         if (redditSearch == '') {
-            message.channel.send("No subreddit specified!");
+            message.channel.send("No subreddit specified");
         } else {
             fetch('https://www.reddit.com/r/' + redditSearch + '.json?limit=100').then((response) => {
                 return response.json();

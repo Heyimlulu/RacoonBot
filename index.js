@@ -3,6 +3,13 @@ const config = require("./json/config.json");
 const fs = require('fs');
 const WS = require('./ws/ws')
 const client = new Discord.Client();
+const fetch = require('node-fetch');
+
+// import admin commands
+const welcome = require('./commands/admin/welcome');
+const leave = require('./commands/admin/leave');
+const kick = require('./commands/admin/kick');
+const ban = require('./commands/admin/ban');
 
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
@@ -46,9 +53,9 @@ for (const file of commandFilesGeneral) {
     client.commands.set(command.name, command);
 }
 
-const commandFilesOwner = fs.readdirSync('./commands/owner').filter(file => file.endsWith('.js'));
-for (const file of commandFilesOwner) {
-    const command = require(`./commands/owner/${file}`);
+const commandFilesAdmin = fs.readdirSync('./commands/admin').filter(file => file.endsWith('.js'));
+for (const file of commandFilesAdmin) {
+    const command = require(`./commands/admin/${file}`);
 
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
@@ -64,7 +71,12 @@ client.on('ready', () => {
     console.log(`\x1b[32mLogged in as \x1b[34m${client.user.tag}\x1b[0m! (\x1b[33m${client.user.id}\x1b[0m)`)
     console.log(`Ready to serve in \x1b[33m${client.channels.cache.size}\x1b[0m channels on \x1b[33m${client.guilds.cache.size}\x1b[0m servers, for a total of \x1b[33m${client.users.cache.size}\x1b[0m users.`);
     console.log('===========[ READY ]===========');
-    
+
+    welcome(client);
+    leave(client);
+    kick(client);
+    ban(client);
+
     setInterval(() => {
         let activityTypes = ['PLAYING','STREAMING']
         let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
