@@ -37,6 +37,8 @@ npm start
 
 - [reddit](https://www.reddit.com/)
 
+- [steam](https://store.steampowered.com/)
+
 ## Dependencies
 
 - discordjs
