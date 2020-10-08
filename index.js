@@ -1,7 +1,6 @@
 const Discord = require('discord.js');
 const config = require("./json/config.json");
 const fs = require('fs');
-const WS = require('./ws/ws')
 const client = new Discord.Client();
 const fetch = require('node-fetch');
 
@@ -15,16 +14,9 @@ const ban = require('./commands/admin/ban');
 const playingJSON = require('./json/playing.json');
 const streamingJSON = require('./json/streaming.json');
 
-client.commands = new Discord.Collection();
-
-// ================================================================================================ //
-
-// Create Websocket instance with token you set in config.json file,
-// port 5665 and passing the discord client instance
-// locahost:5665/?token='your-token-here'
-var ws = new WS(config.ws.token, config.ws.port, client)
-
 // ===================================== Discord Collection ===================================== //
+
+client.commands = new Discord.Collection();
 
 const commandFilesFun = fs.readdirSync('./commands/fun').filter(file => file.endsWith('.js'));
 for (const file of commandFilesFun) {

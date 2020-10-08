@@ -1,8 +1,4 @@
 {
   "token": "your-discord-bot-token",
-  "prefix": "racoon ",
-  "ws": {
-    "port": 8080,
-    "token": "your-websocket-token"
-  }
+  "prefix": "racoon "
 }
