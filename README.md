@@ -2,6 +2,14 @@
 
 A multifunction discord bot.
 
+![](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot/master?style=for-the-badge)
+![](https://img.shields.io/static/v1?label=Language&message=Javascript&style=for-the-badge&color=yellow)
+![](https://img.shields.io/static/v1?label=Dependencie&message=DiscordJS&style=for-the-badge&color=lightblue)
+![](https://img.shields.io/static/v1?label=Published&message=DiscordBotList.com&style=for-the-badge&color=green)
+![](https://img.shields.io/static/v1?label=Onhold&message=Top.gg&style=for-the-badge&color=red)
+![](https://img.shields.io/static/v1?label=Author&message=Heyimlulu&style=for-the-badge)
+![](https://img.shields.io/github/license/Heyimlulu/RacoonBot?style=for-the-badge)
+
 ## Getting started
 
 ### Prerequisites
@@ -42,14 +50,6 @@ npm start
 ## Dependencies
 
 - discordjs
-
-- express
-
-- express-handlebars
-
-- body-parser
-
-- node-fetch
 
 ## Author
 
