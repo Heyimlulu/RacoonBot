@@ -41,7 +41,17 @@ npm start
 
 - [x] [discordbotlist.com/bots/racoonbot](https://discordbotlist.com/bots/racoonbot)
 
-- [ ] top.gg
+- [ ] top.gg (Coming soon)
+
+## Features
+
+- Search and get a random image by name from [imgur](https://giphy.com/) and  [giphy.](https://imgur.com/)
+
+- Search a [subreddit](https://www.reddit.com/) by name and get a random post
+
+- Get player stats from [steam](https://store.steampowered.com/) with a SteamID
+
+- Auto-role commands
 
 ## APIs
 
