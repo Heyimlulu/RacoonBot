@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const client = new Discord.Client();
 const os = require('os');
 const { Command } = require('discord-akairo');
 
@@ -6,7 +7,7 @@ module.exports = {
     name: 'stats',
     description: 'Show stats about the bot',
     category: 'utility',
-    execute(message) {
+    execute (message) {
 
         var uptime = process.uptime();
         const date = new Date(uptime*1000);
@@ -36,9 +37,9 @@ module.exports = {
             .setColor('RANDOM')
             .setTitle('Bot stats')
             .setAuthor('RacoonBot')
-            // .addField('Servers', this.client.guilds.cache.size, false)
-            // .addField('Channels', this.client.channels.cache.size, false)
-            // .addField('Users', this.client.users.cache.size, false)
+            //.addField('Servers', client.guilds.cache.size, false)
+            //.addField('Channels', client.channels.cache.size, false)
+            //.addField('Users', client.users.cache.size, false)
             .addField('Uptime', dateString, false)
             .addField('Ram usage', `${bytesToSize(process.memoryUsage().heapUsed)}/${bytesToSize(os.totalmem)}`, false)
             .addField('CPU', `${os.cpus()[0].model} (${os.cpus().length} core)`, false)
@@ -50,6 +51,5 @@ module.exports = {
             .setTimestamp();
 
         message.channel.send(statsEmbed);
-
     }
 };

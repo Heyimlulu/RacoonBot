@@ -1,6 +1,6 @@
 module.exports = {
     name: 'shutdown',
-    description: `Shutdown the bot`,
+    description: `Reboot the bot`,
     category: 'owner',
     execute(message) {
 
