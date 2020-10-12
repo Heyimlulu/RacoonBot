@@ -1,6 +1,6 @@
 # Racoon Bot
 
-A multifunction discord bot.
+![](https://repository-images.githubusercontent.com/286796413/a8dbb000-f467-11ea-9d0a-b42efcb9b1a5)
 
 ![](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot/master?style=for-the-badge)
 ![](https://img.shields.io/static/v1?label=Language&message=Javascript&style=for-the-badge&color=yellow)
