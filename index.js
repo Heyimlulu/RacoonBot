@@ -9,6 +9,8 @@ const leave = require('./commands/admin/leave');
 const kick = require('./commands/admin/kick');
 const ban = require('./commands/admin/ban');
 
+const stats = require('./commands/utility/stats');
+
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
 const streamingJSON = require('./json/streaming.json');
@@ -91,6 +93,8 @@ client.on('ready', () => {
 });
 
 // ================================= On message received ================================= //
+
+stats(client);
 
 client.on('message', message => {
 

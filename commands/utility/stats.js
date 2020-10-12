@@ -1,13 +1,9 @@
 const Discord = require('discord.js');
-const client = new Discord.Client();
 const os = require('os');
-const { Command } = require('discord-akairo');
+const config = require("../../json/config.json");
 
-module.exports = {
-    name: 'stats',
-    description: 'Show stats about the bot',
-    category: 'utility',
-    execute (message) {
+module.exports = (client) => {
+    client.on('message', message => {
 
         var uptime = process.uptime();
         const date = new Date(uptime*1000);
@@ -33,23 +29,29 @@ module.exports = {
             return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
         };
 
-        const statsEmbed = new Discord.MessageEmbed()
-            .setColor('RANDOM')
-            .setTitle('Bot stats')
-            .setAuthor('RacoonBot')
-            //.addField('Servers', client.guilds.cache.size, false)
-            //.addField('Channels', client.channels.cache.size, false)
-            //.addField('Users', client.users.cache.size, false)
-            .addField('Uptime', dateString, false)
-            .addField('Ram usage', `${bytesToSize(process.memoryUsage().heapUsed)}/${bytesToSize(os.totalmem)}`, false)
-            .addField('CPU', `${os.cpus()[0].model} (${os.cpus().length} core)`, false)
-            // .addField('CPU architecture', `${os.arch()}`)
-            .addField('OS', `${os.platform()} ${os.release()}`, false)
-            // .addField('OS', `${os.version()}`, true)
-            .addField('Nodejs version', process.version, false)
-            .addField('Discord.js version', '12.2.0', false)
-            .setTimestamp();
+        if (message.content === `${config.prefix}stats`) {
+            try {
+                const statsEmbed = new Discord.MessageEmbed()
+                    .setColor('RANDOM')
+                    .setTitle('Bot stats')
+                    .setAuthor('RacoonBot')
+                    .addField('Servers', client.guilds.cache.size, false)
+                    .addField('Channels', client.channels.cache.size, false)
+                    .addField('Users', client.users.cache.size, false)
+                    .addField('Uptime', dateString, false)
+                    .addField('Ram usage', `${bytesToSize(process.memoryUsage().heapUsed)}/${bytesToSize(os.totalmem)}`, false)
+                    .addField('CPU', `${os.cpus()[0].model} (${os.cpus().length} core)`, false)
+                    // .addField('CPU architecture', `${os.arch()}`)
+                    .addField('OS', `${os.platform()} ${os.release()}`, false)
+                    // .addField('OS', `${os.version()}`, true)
+                    .addField('Nodejs version', process.version, false)
+                    .addField('Discord.js version', '12.2.0', false)
+                    .setTimestamp();
 
-        message.channel.send(statsEmbed);
-    }
-};
+                message.channel.send(statsEmbed);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+    })
+}

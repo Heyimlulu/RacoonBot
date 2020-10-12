@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require('../../json/config.json');
 
 module.exports = {
     name: 'role',
@@ -6,9 +7,7 @@ module.exports = {
     category: 'utility',
     execute(message, args) {
 
-        var prefix = 'racoon ';
-
-        if (message.content === `${prefix}role`) {
+        if (message.content === `${config.prefix}role`) {
             const InfoEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setAuthor('RacoonBot')
@@ -27,7 +26,7 @@ module.exports = {
 
             // Create role to server
             if (args[0].toLowerCase() == 'create') {
-                let rName = message.content.split(`${prefix}role create`).join("")
+                let rName = message.content.split(`${config.prefix}role create`).join("")
                 let rColor;
                 args.forEach(arg => {
                     if (arg.startsWith("#")) {
@@ -73,7 +72,7 @@ module.exports = {
             // REQUIRE MANAGE ROLE PERMISSION
             else if (args[0].toLowerCase() == 'delete') {
 
-                let roleToDelete = message.content.split(`${prefix}role delete`).join("").trim();
+                let roleToDelete = message.content.split(`${config.prefix}role delete`).join("").trim();
 
                 if (!roleToDelete){ // If variable is an empty string
                     message.channel.send('You did not specify a role!')
@@ -100,7 +99,7 @@ module.exports = {
             // Add role to user
             else if (args[0].toLowerCase() == 'add') {
 
-                let roleToAdd = message.content.split(`${prefix}role add`).join("").trim();
+                let roleToAdd = message.content.split(`${config.prefix}role add`).join("").trim();
 
                 if (!roleToAdd){
                     message.channel.send('You did not specify a role!')
@@ -127,7 +126,7 @@ module.exports = {
             // Remove role to user
             else if (args[0].toLowerCase() == 'remove') {
 
-                let roleToRemove = message.content.split(`${prefix}role remove`).join("").trim();
+                let roleToRemove = message.content.split(`${config.prefix}role remove`).join("").trim();
 
                 if (!roleToRemove){
                     message.channel.send('You did not specify a role!')
