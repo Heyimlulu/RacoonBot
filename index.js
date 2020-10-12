@@ -98,23 +98,6 @@ stats(client);
 
 client.on('message', message => {
 
-    if (message.content === `${config.prefix}list`) {
-        try {
-            const statsEmbed = new Discord.MessageEmbed()
-                .setColor('RANDOM')
-                .setTitle('Bot stats')
-                .setAuthor('RacoonBot')
-                .addField('Servers', client.guilds.cache.size, false)
-                .addField('Channels', client.channels.cache.size, false)
-                .addField('Users', client.users.cache.size, false)
-
-            message.channel.send(statsEmbed);
-        } catch (error) {
-            // handle failure of any Promise rejection inside here
-            console.log(error);
-        }
-    }
-
     if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
     const args = message.content.slice(config.prefix.length).trim().split(/ +/);
