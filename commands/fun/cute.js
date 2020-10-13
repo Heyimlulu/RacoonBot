@@ -16,18 +16,18 @@ module.exports = {
         let guess = cute[Math.floor(Math.random() * (cute.length - 1) + 1)];
 
         if (message.mentions.users.first()) {
-            const Embed = new Discord.MessageEmbed()
-            const User = message.mentions.users.first()
+            const Embed = new Discord.MessageEmbed();
+            const User = message.mentions.users.first();
 
             Embed.setTitle('Cute-o-Meter')
                 .setDescription(`I guess **${User.tag}** is **${guess}**`)
                 .setThumbnail(User.displayAvatarURL())
                 .setColor("RANDOM")
 
-            message.delete()
-            message.channel.send(Embed)
+            message.delete();
+            message.channel.send(Embed);
         } else {
-            message.channel.send(`You did not specified a user! **${message.author.tag}**`)
+            message.channel.send(`You did not specified a user! **${message.author.tag}**`);
         }
     },
 };

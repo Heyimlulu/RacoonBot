@@ -10,6 +10,7 @@ const kick = require('./commands/admin/kick');
 const ban = require('./commands/admin/ban');
 
 const stats = require('./commands/utility/stats');
+const voice = require('./commands/voice/music');
 
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
@@ -49,6 +50,15 @@ for (const file of commandFilesGeneral) {
 const commandFilesAdmin = fs.readdirSync('./commands/admin').filter(file => file.endsWith('.js'));
 for (const file of commandFilesAdmin) {
     const command = require(`./commands/admin/${file}`);
+
+    // set a new item in the Collection
+    // with the key as the command name and the value as the exported module
+    client.commands.set(command.name, command);
+}
+
+const commandFilesVoice = fs.readdirSync('./commands/voice').filter(file => file.endsWith('.js'));
+for (const file of commandFilesVoice) {
+    const command = require(`./commands/voice/${file}`);
 
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
@@ -95,6 +105,7 @@ client.on('ready', () => {
 // ================================= On message received ================================= //
 
 stats(client);
+voice(client);
 
 client.on('message', message => {
 
