@@ -3,7 +3,7 @@ const config = require('../../json/config.json');
 
 module.exports = {
     name: 'role',
-    description: 'A role utility command!!',
+    description: 'Create yourself some custom roles!',
     category: 'utility',
     execute(message, args) {
 
@@ -12,14 +12,10 @@ module.exports = {
                 .setColor("RANDOM")
                 .setAuthor('RacoonBot')
                 .setTitle('Role commands help')
-                .addField('Creating a new role', 'racoon role create [Role name] [#hex Color] [<= example: #111000 or #111]', false)
-                .addField('~', 'E.g. racoon role create my new role #111', false)
-                .addField('Deleting a role (require manage roles permission)', 'racoon role delete [Role name]', false)
-                .addField('~', 'E.g. racoon role delete my new role', false)
-                .addField('Adding a role to a user', 'racoon role add [Role name]', false)
-                .addField('~', 'E.g. racoon role add my new role', false)
-                .addField('Removing a role to a user', 'racoon role remove [Role name]', false)
-                .addField('~', 'E.g. racoon role remove my new role', false)
+                .addField('Creating a new role', 'racoon role create [Role name] [#hex Color] [<= example: #111000 or #111]\n*E.g. racoon role create my new role #111*', false)
+                .addField('Deleting a role (require manage roles permission)', 'racoon role delete [Role name]\n*E.g. racoon role delete my new role*', false)
+                .addField('Adding a role to a user', 'racoon role add [Role name]\n*E.g. racoon role add my new role*', false)
+                .addField('Removing a role to a user', 'racoon role remove [Role name]\n*E.g. racoon role remove my new role*', false)
 
             message.channel.send(InfoEmbed)
         }  else {

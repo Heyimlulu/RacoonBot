@@ -11,6 +11,7 @@ const ban = require('./commands/admin/ban');
 
 const stats = require('./commands/utility/stats');
 const voice = require('./commands/voice/music');
+const status = require('./commands/owner/status');
 
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
@@ -106,6 +107,7 @@ client.on('ready', () => {
 
 stats(client);
 voice(client);
+status(client);
 
 client.on('message', message => {
 

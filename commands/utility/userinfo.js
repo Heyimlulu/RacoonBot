@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'userinfo',
-    description: 'Display info box for a user!',
+    description: 'Show info about a user!',
     execute(message) {
         if(!message.mentions.users.first()) {
             const userInfo = new Discord.MessageEmbed()

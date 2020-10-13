@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'imgur',
-    description: 'Send some images from imgur!',
+    description: 'Send some random images from imgur!',
     category: 'fun',
     execute(message) {
 

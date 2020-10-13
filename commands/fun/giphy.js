@@ -2,7 +2,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'giphy',
-    description: 'Send some animated images from giphy!',
+    description: 'Send some random gif from giphy!',
     category: 'fun',
     execute(message) {
 

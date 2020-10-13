@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'info',
-    description: 'Show some informations about the bot!',
+    description: 'Send some informations about the author',
     execute(message) {
         const Embed = new Discord.MessageEmbed()
             .setColor("RANDOM")

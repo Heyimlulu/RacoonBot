@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'serverinfo',
-    description: 'Show info about the server!',
+    description: 'Send some information about the server!',
     execute(message) {
         let botCount = message.guild.members.cache.filter(member => member.user.bot).size;
         const serverInfo = new Discord.MessageEmbed()

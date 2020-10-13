@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'reddit',
-    description: 'Search thread from reddit!',
+    description: 'Send random images from the subreddit you choose!',
     category: 'fun',
     execute(message) {
 

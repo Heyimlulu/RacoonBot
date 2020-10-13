@@ -1,7 +1,14 @@
 module.exports = {
     name: 'say',
     description: 'Random sentence!',
+    category: 'owner',
     execute(message) {
+
+        if (message.author.id !== '265896171384340480') {
+            message.reply(`You did not have permissions to execute that command!`);
+            return;
+        }
+
         var speechs = [
             'What?!',
             'Oui',
@@ -22,6 +29,7 @@ module.exports = {
             'PTDR T KI?',
             'YOLO',
             "Désolé vous ne m'intéressez pas"];
+
         var speech = speechs[Math.floor(Math.random()*speechs.length)];
         message.channel.send(speech)
     },

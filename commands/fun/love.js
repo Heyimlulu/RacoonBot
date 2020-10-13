@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 module.exports = {
     name: 'love',
-    description: `Calculate the love you have to another person.`,
+    description: `Tell a user the love he have to another person.`,
     category: 'fun',
     execute(message) {
 

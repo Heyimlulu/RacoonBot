@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 
 module.exports = {
     name: 'steam',
-    description: 'Share stats for a steam user',
+    description: 'Send stats for a steam user',
     category: 'fun',
     execute(message) {
 

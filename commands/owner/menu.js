@@ -3,8 +3,14 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'menu',
     description: 'Give you a random menu!',
-    category: 'fun',
+    category: 'owner',
     execute(message) {
+
+        if (message.author.id !== '265896171384340480') {
+            message.reply(`You did not have permissions to execute that command!`);
+            return;
+        }
+
         var plats = [
             'Salade (au choix)',
             'Sandwich',
@@ -18,6 +24,7 @@ module.exports = {
             'Coca-Cola',
             'Coca-Cola Zero',
             'Redbull',
+            'Monster energy drink',
             'Ovomaltine',
             'Eau plate'];
         var boisson = boissons[Math.floor(Math.random()*boissons.length)];
