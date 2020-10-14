@@ -8,6 +8,7 @@ const welcome = require('./commands/admin/welcome');
 const leave = require('./commands/admin/leave');
 const kick = require('./commands/admin/kick');
 const ban = require('./commands/admin/ban');
+const unban = require('./commands/admin/unban');
 
 const stats = require('./commands/utility/stats');
 const voice = require('./commands/voice/music');
@@ -76,11 +77,6 @@ client.on('ready', () => {
     console.log(`Ready to serve in \x1b[33m${client.channels.cache.size}\x1b[0m channels on \x1b[33m${client.guilds.cache.size}\x1b[0m servers, for a total of \x1b[33m${client.users.cache.size}\x1b[0m users.`);
     console.log('===========[ READY ]===========');
 
-    welcome(client);
-    leave(client);
-    kick(client);
-    ban(client);
-
     setInterval(() => {
         let activityTypes = ['PLAYING','STREAMING']
         let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
@@ -105,6 +101,11 @@ client.on('ready', () => {
 
 // ================================= On message received ================================= //
 
+welcome(client);
+leave(client);
+kick(client);
+ban(client);
+unban(client);
 stats(client);
 voice(client);
 status(client);

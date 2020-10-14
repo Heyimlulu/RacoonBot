@@ -7,7 +7,8 @@ module.exports = (client) => {
         let url = message.content.split(`${config.prefix}play`).join("").trim();
 
         if (!url) {
-            return console.log('Invalid url');
+            //return console.log('Invalid url');
+            return;
         }
 
         if (message.content.startsWith(`${config.prefix}play`)) {

@@ -10,21 +10,22 @@ module.exports = {
             .setAuthor('RacoonBot')
             .setColor("RANDOM")
             .setTitle('Help commands list')
-            .addField('⚡\u2000Admin commands', '~', false) // Admin commands
+            .addField('⚡ Admin commands', '~', false) // Admin commands
             .addField('ban', 'Ban the user from a server\n*E.g. racoon ban @user*', true)
+            .addField('unban', 'Unban the user from a server\n*E.g. racoon unban userDiscordID*', true)
             .addField('kick', 'Kick the user from a server\n*E.g. racoon kick @user*', true)
-            .addField('🎉\u2000Fun commands', '~', false) // Fun commands
-            .addField('cuteometer', 'Tell a user how cute he is\n*E.g. racoon cute @user*', true)
+            .addField('🎉 Fun commands', '~', false) // Fun commands
+            .addField('cute', 'Tell a user how cute he is\n*E.g. racoon cute @user*', true)
             .addField('giphy', 'Send some random gif from giphy\n*E.g. racoon giphy dog*', true)
             .addField('imgur', 'Send some random images from imgur\n*E.g. racoon imgur cat*', true)
             .addField('love', 'Tell a user the love he has to another person\n*E.g. racoon love @user*', true)
             .addField('reddit', 'Send random images from the subreddit you choose\n*E.g. racoon reddit subredditName*', true)
             .addField('steam', "Send stats for a steam user\n*E.g. racoon steam userSteamid*", true)
-            .addField('📝\u2000General commands', '~', false) // General commands
+            .addField('📝 General commands', '~', false) // General commands
             .addField('advice', 'Send some random advices', true)
             .addField('fact', 'Send some random racoon facts', true)
             .addField('sayd', 'Write something you want the bot to repeat\n*E.g. racoon sayd Hello world!*', true)
-            .addField('🔩\u2000Utility commands', '~', false) // Utility commands
+            .addField('🔩 Utility commands', '~', false) // Utility commands
             .addField('info', 'Send some informations about the author', true)
             .addField('ping', 'Ping the bot', true)
             .addField('role', 'Display the autorole commands list details', true)
