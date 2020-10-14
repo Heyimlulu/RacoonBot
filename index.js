@@ -4,8 +4,8 @@ const fs = require('fs');
 const client = new Discord.Client();
 
 // import admin commands
-const welcome = require('./commands/admin/welcome');
-const leave = require('./commands/admin/leave');
+// const welcome = require('./commands/admin/welcome');
+// const leave = require('./commands/admin/leave');
 const kick = require('./commands/admin/kick');
 const ban = require('./commands/admin/ban');
 const unban = require('./commands/admin/unban');
@@ -101,8 +101,8 @@ client.on('ready', () => {
 
 // ================================= On message received ================================= //
 
-welcome(client);
-leave(client);
+// welcome(client);
+// leave(client);
 kick(client);
 ban(client);
 unban(client);

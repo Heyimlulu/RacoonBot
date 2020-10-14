@@ -1,3 +1,4 @@
+/*
 module.exports = (client) => {
     const channelId = '413795421354459146'; // welcome channel
 
@@ -10,3 +11,5 @@ module.exports = (client) => {
         channel.send(message);
     })
 }
+
+ */
