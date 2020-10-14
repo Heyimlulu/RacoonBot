@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 module.exports = {
-    name: 'cuteometer',
+    name: 'cute',
     description: `Tell a user how cute he is.`,
     category: 'fun',
     execute(message) {
