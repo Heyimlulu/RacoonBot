@@ -9,7 +9,12 @@ module.exports = (client) => {
             try {
                 let statusName = message.content.split(`${config.prefix}status`).join("").trim();
 
+                if (!statusName) {
+                    return message.channel.send('There was an error trying to set the status, please check if the input is correct');
+                }
+
                 client.user.setActivity(statusName, {type: "PLAYING"});
+
                 message.channel.send(`Status have been set to **${statusName}**`);
             } catch (e) {
                 console.log(e);
