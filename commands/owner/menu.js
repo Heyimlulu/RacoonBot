@@ -13,7 +13,10 @@ module.exports = {
 
         var plats = [
             'Salade (au choix)',
-            'Sandwich',
+            'Sandwich dinde',
+            'Sandwich roastbeef',
+            'Sandwich salami',
+            'Sandwich jambon-fromage',
             'Taboulet',
             'Croissant',
             'Pain au chocolat',
@@ -26,7 +29,7 @@ module.exports = {
             'Redbull',
             'Monster energy drink',
             'Ovomaltine',
-            'Eau plate'];
+            'Evian'];
         var boisson = boissons[Math.floor(Math.random()*boissons.length)];
 
         var desserts = [

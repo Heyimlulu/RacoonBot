@@ -26,6 +26,7 @@ module.exports = {
             .addField('fact', 'Send some random racoon facts', true)
             .addField('sayd', 'Write something you want the bot to repeat\n*E.g. racoon sayd Hello world!*', true)
             .addField('🔩 Utility commands', '~', false) // Utility commands
+            .addField('feedback', 'What do you want to say to the developer?\n*E.g. racoon feedback I just wanted to say hi ;3*', true)
             .addField('info', 'Send some informations about the author', true)
             .addField('ping', 'Ping the bot', true)
             .addField('role', 'Display the autorole commands list details', true)

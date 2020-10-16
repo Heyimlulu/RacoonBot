@@ -4,8 +4,8 @@ const fs = require('fs');
 const client = new Discord.Client();
 
 // import admin commands
-// const welcome = require('./commands/admin/welcome');
-// const leave = require('./commands/admin/leave');
+//const welcome = require('./commands/admin/welcome');
+//const leave = require('./commands/admin/leave');
 const kick = require('./commands/admin/kick');
 const ban = require('./commands/admin/ban');
 const unban = require('./commands/admin/unban');
@@ -13,6 +13,8 @@ const unban = require('./commands/admin/unban');
 const stats = require('./commands/utility/stats');
 const voice = require('./commands/voice/music');
 const status = require('./commands/owner/status');
+const feedback = require('./commands/utility/feedback');
+const dm = require('./commands/owner/dm');
 
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
@@ -101,14 +103,16 @@ client.on('ready', () => {
 
 // ================================= On message received ================================= //
 
-// welcome(client);
-// leave(client);
+//welcome(client);
+//leave(client);
 kick(client);
 ban(client);
 unban(client);
 stats(client);
 voice(client);
 status(client);
+feedback(client);
+dm(client);
 
 client.on('message', message => {
 
