@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const help = require('../../json/help.json');
 
 module.exports = {
     name: 'help',
@@ -11,29 +12,30 @@ module.exports = {
             .setColor("RANDOM")
             .setTitle('Help commands list')
             .addField('⚡ Admin commands', '~', false) // Admin commands
-            .addField('ban', 'Ban the user from a server\n*E.g. racoon ban @user*', true)
-            .addField('unban', 'Unban the user from a server\n*E.g. racoon unban userDiscordID*', true)
-            .addField('kick', 'Kick the user from a server\n*E.g. racoon kick @user*', true)
+            .addField(`${help.admin.ban.name}`, `${help.admin.ban.description}\n *E.g. ${help.admin.ban.example}*`, true)
+            .addField(`${help.admin.unban.name}`, `${help.admin.unban.description}\n *E.g. ${help.admin.unban.example}*`, true)
+            .addField(`${help.admin.kick.name}`, `${help.admin.kick.description}\n *E.g. ${help.admin.kick.example}*`, true)
             .addField('🎉 Fun commands', '~', false) // Fun commands
-            .addField('cute', 'Tell a user how cute he is\n*E.g. racoon cute @user*', true)
-            .addField('giphy', 'Send some random gif from giphy\n*E.g. racoon giphy dog*', true)
-            .addField('imgur', 'Send some random images from imgur\n*E.g. racoon imgur cat*', true)
-            .addField('love', 'Tell a user the love he has to another person\n*E.g. racoon love @user*', true)
-            .addField('reddit', 'Send random images from the subreddit you choose\n*E.g. racoon reddit subredditName*', true)
-            .addField('steam', "Send stats for a steam user\n*E.g. racoon steam userSteamid*", true)
+            .addField(`${help.fun.cute.name}`, `${help.fun.cute.description}\n *E.g. ${help.fun.cute.example}*`, true)
+            .addField(`${help.fun.giphy.name}`, `${help.fun.giphy.description}\n *E.g. ${help.fun.giphy.example}*`, true)
+            .addField(`${help.fun.imgur.name}`, `${help.fun.imgur.description}\n *E.g. ${help.fun.imgur.example}*`, true)
+            .addField(`${help.fun.love.name}`, `${help.fun.love.description}\n *E.g. ${help.fun.love.example}*`, true)
+            .addField(`${help.fun.reddit.name}`, `${help.fun.reddit.description}\n *E.g. ${help.fun.reddit.example}*`, true)
+            .addField(`${help.fun.steam.name}`, `${help.fun.steam.description}\n *E.g. ${help.fun.steam.example}*`, true)
             .addField('📝 General commands', '~', false) // General commands
-            .addField('advice', 'Send some random advices', true)
-            .addField('fact', 'Send some random racoon facts', true)
-            .addField('sayd', 'Write something you want the bot to repeat\n*E.g. racoon sayd Hello world!*', true)
+            .addField(`${help.general.advice.name}`, `${help.general.advice.description}`, true)
+            .addField(`${help.general.fact.name}`, `${help.general.fact.description}`, true)
+            .addField(`${help.general.sayd.name}`, `${help.general.sayd.description}\n *E.g. ${help.general.sayd.example}*`, true)
             .addField('🔩 Utility commands', '~', false) // Utility commands
-            .addField('feedback', 'What do you want to say to the developer?\n*E.g. racoon feedback I just wanted to say hi ;3*', true)
-            .addField('info', 'Send some informations about the author', true)
-            .addField('ping', 'Ping the bot', true)
-            .addField('role', 'Display the autorole commands list details', true)
-            .addField('serverinfo', 'Send some information about the server', true)
-            .addField('stats', 'Show some stats about the bot', true)
-            .addField('upvote', 'Send a link to vote for my bot', true)
-            .addField('userinfo', 'Show info about a user\n*E.g. racoon userinfo @user*', true)
+            .addField(`${help.utility.feedback.name}`, `${help.utility.feedback.description}\n *E.g. ${help.utility.feedback.example}*`, true)
+            .addField(`${help.utility.info.name}`, `${help.utility.info.description}`, true)
+            .addField(`${help.utility.ping.name}`, `${help.utility.ping.description}`, true)
+            .addField(`${help.utility.role.name}`, `${help.utility.role.description}`, true)
+            .addField(`${help.utility.serverinfo.name}`, `${help.utility.serverinfo.description}`, true)
+            .addField(`${help.utility.stats.name}`, `${help.utility.stats.description}`, true)
+            .addField(`${help.utility.upvote.name}`, `${help.utility.upvote.description}`, true)
+            .addField(`${help.utility.userinfo.name}`, `${help.utility.userinfo.description}\n *E.g. ${help.utility.userinfo.example}*`, true)
+            .addField('~', '~', true)
 
         //message.author.send(helpEmbed); // Send a dm to the user
         //message.reply("I've sent you a DM with the commands list details.");

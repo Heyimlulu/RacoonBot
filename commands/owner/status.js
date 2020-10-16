@@ -10,7 +10,7 @@ module.exports = (client) => {
                 let statusName = message.content.split(`${config.prefix}status`).join("").trim();
 
                 if (!statusName) {
-                    return message.channel.send('There was an error trying to set the status, please check if the input is correct');
+                    return message.reply('Which status should I have?');
                 }
 
                 client.user.setActivity(statusName, {type: "PLAYING"});
@@ -20,7 +20,7 @@ module.exports = (client) => {
                 console.log(e);
             }
         } else {
-            message.reply('You did not have permissions to execute that command!');
+            message.reply('You did not have permissions to run that command!');
         }
     })
 }

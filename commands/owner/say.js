@@ -5,7 +5,7 @@ module.exports = {
     execute(message) {
 
         if (message.author.id !== '265896171384340480') {
-            message.reply(`You did not have permissions to execute that command!`);
+            message.reply(`You did not have permissions to run that command!`);
             return;
         }
 
