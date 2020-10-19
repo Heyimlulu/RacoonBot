@@ -20,6 +20,8 @@ const dm = require('./commands/owner/dm');
 const playingJSON = require('./json/playing.json');
 const streamingJSON = require('./json/streaming.json');
 
+const guilds = require('./json/guilds.json');
+
 // ===================================== Discord Collection ===================================== //
 
 client.commands = new Discord.Collection();
@@ -63,6 +65,15 @@ for (const file of commandFilesAdmin) {
 const commandFilesVoice = fs.readdirSync('./commands/voice').filter(file => file.endsWith('.js'));
 for (const file of commandFilesVoice) {
     const command = require(`./commands/voice/${file}`);
+
+    // set a new item in the Collection
+    // with the key as the command name and the value as the exported module
+    client.commands.set(command.name, command);
+}
+
+const commandFilesOwner = fs.readdirSync('./commands/owner').filter(file => file.endsWith('.js'));
+for (const file of commandFilesOwner) {
+    const command = require(`./commands/owner/${file}`);
 
     // set a new item in the Collection
     // with the key as the command name and the value as the exported module
@@ -130,6 +141,21 @@ client.on('message', message => {
         message.reply('there was an error trying to execute that command!');
     }
     console.log(message.content);
+
+    if (!message.author.bot) {
+        // If the guild isn't in the JSON file yet, set it up.
+        if (!guilds[message.guild.id]) guilds[message.guild.id] = { messageCount: 1 };
+
+        // Otherwise, add one to the guild's message count.
+        else guilds[message.guild.id].messageCount++;
+
+        // Write the data back to the JSON file, logging any errors to the console.
+        try {
+            fs.writeFileSync('./json/guilds.json', JSON.stringify(guilds)); // Again, path may vary.
+        } catch(err) {
+            console.error(err);
+        }
+    }
 
 });
 

@@ -37,31 +37,13 @@ module.exports = {
             'Chips'];
         var dessert = desserts[Math.floor(Math.random()*desserts.length)];
 
-
-        // Display the menu in a MessageEmbed
-        // Display the menu for the actual user
-        const Embed = new Discord.MessageEmbed()
-        if(!message.mentions.users.first()) {
-            Embed.setColor("RANDOM")
-                .setTitle(`Voici votre menu du jour! ${message.author.tag}`)
-                .setDescription('Spécial Coop')
-                .addField('Plat principal', plat, false)
-                .addField('Boisson', boisson, false)
-                .addField('Dessert', dessert, false)
-                .setTimestamp()
-        }
-        else
-        {
-            // Display the menu for the mentioned user
-            const User = message.mentions.users.first()
-            Embed.setColor("RANDOM")
-                .setTitle(`Voici le menu du jour pour ${User.tag}`)
-                .setDescription('Spécial Coop')
-                .addField('Plat principal', plat, false)
-                .addField('Boisson', boisson, false)
-                .addField('Dessert', dessert, false)
-                .setTimestamp()
-        }
+        const Embed = new Discord.MessageEmbed();
+        Embed.setColor("RANDOM")
+            .setTitle(`Menu ${message.author.tag}`)
+            .setDescription('Coop Special')
+            .addField('Main', plat, true)
+            .addField('Drink', boisson, true)
+            .addField('Dessert', dessert, true)
 
         message.channel.send(Embed);
     },
