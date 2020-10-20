@@ -89,9 +89,9 @@ npm start
 
 ## Built with
 
-- IntelliJ IDEA
+<img height="300" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/1200px-JetBrains_Logo_2016.svg.png">
 
-![](https://camo.githubusercontent.com/1fd4c27be518396955d0aab5b54ed61d625c700e/68747470733a2f2f6974732e67616d696e6774692e6d652f585438462e737667)
+<img height="50px" src="https://cdn.worldvectorlogo.com/logos/intellijidea.svg">
 
 ## Author
 
