@@ -56,16 +56,22 @@ module.exports = {
                                     }
 
                                     // Check if the player has a vac ban in his profile
-                                    if (responseVAC.hasOwnProperty('players')) {
-                                        var vacCheck = responseVAC.players.VACBanned;
+                                    if (responseVAC.players[0].hasOwnProperty('VACBanned')) {
+                                        var vacCheck = responseVAC.players[0].VACBanned;
 
-                                        if (vacCheck != 'false') {
-                                            var vacBanned = 'no';
+                                        if (vacCheck === true) {
+                                            var vacBanned = 'Yes';
                                         } else {
-                                            var vacBanned = 'yes';
+                                            var vacBanned = 'No';
                                         }
                                     } else {
                                         var varCheck = 'unknown';
+                                    }
+
+                                    if (response.response.players[0].hasOwnProperty('realname')) {
+                                        var realName = response.response.players[0].realname;
+                                    } else {
+                                        var realName = 'unknown';
                                     }
 
                                     // Count how many games the player have
@@ -146,7 +152,7 @@ module.exports = {
                                     const steamEmbed = new Discord.MessageEmbed()
                                         .setColor("RANDOM")
                                         .setTitle(response.response.players[0].personaname)
-                                        .setDescription(response.response.players[0].realname)
+                                        .setDescription(`Realname : ${realName}`)
                                         .setURL(response.response.players[0].profileurl)
                                         .addField('SteamID', response.response.players[0].steamid, false)
                                         .addField('Profile visibility', stateProfile, false)

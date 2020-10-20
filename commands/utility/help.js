@@ -35,7 +35,7 @@ module.exports = {
             .addField(`${help.utility.stats.name}`, `${help.utility.stats.description}`, true)
             .addField(`${help.utility.upvote.name}`, `${help.utility.upvote.description}`, true)
             .addField(`${help.utility.userinfo.name}`, `${help.utility.userinfo.description}\n *E.g. ${help.utility.userinfo.example}*`, true)
-            .addField('~', '~', true)
+            .addField('\u200B', '\u200B', true)
 
         //message.author.send(helpEmbed); // Send a dm to the user
         //message.reply("I've sent you a DM with the commands list details.");

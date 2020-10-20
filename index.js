@@ -21,6 +21,7 @@ const counter = require('./counter');
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
 const streamingJSON = require('./json/streaming.json');
+const listeningJSON = require('./json/listening.json');
 
 // ===================================== Discord Collection ===================================== //
 
@@ -91,7 +92,7 @@ client.on('ready', () => {
     console.log('===========[ READY ]===========');
 
     setInterval(() => {
-        let activityTypes = ['PLAYING','STREAMING']
+        let activityTypes = ['PLAYING','STREAMING', 'LISTENING']
         let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
 
         if (randomType == 'PLAYING'){
@@ -108,6 +109,13 @@ client.on('ready', () => {
 
             let activity = streaming[Math.floor(Math.random()*(streaming.length - 1) + 1)];
             client.user.setActivity(activity, {type: "STREAMING", url: "https://www.twitch.tv/RacoonBot_", name: "RacoonBot_ on Twitch"});
+        } else if (randomType == 'LISTENING') {
+
+            // set var for streamingJSON file
+            var listening = listeningJSON;
+
+            let activity = listening[Math.floor(Math.random()*(listening.length - 1) + 1)];
+            client.user.setActivity(activity, {type: "LISTENING"});
         }
     }, 1800000) // <-- run this every 30 minutes
 });
