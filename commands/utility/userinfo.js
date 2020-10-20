@@ -4,29 +4,22 @@ module.exports = {
     name: 'userinfo',
     description: 'Show info about a user!',
     execute(message) {
-        if(!message.mentions.users.first()) {
-            const userInfo = new Discord.MessageEmbed()
-                .setAuthor('RacoonBot')
-                .setTitle('User info')
-                .setColor("RANDOM")
-                .setThumbnail(message.author.displayAvatarURL())
-                .addField("Full Username", `${message.author.username}#${message.author.discriminator}`, false)
-                .addField("ID", message.author.id, false)
-                .addField("Created at", message.author.createdAt, false)
-            message.channel.send(userInfo)
-        }
-        else
-        {
+        if(message.mentions.users.first()) {
             const mentionUser = message.mentions.users.first()
             const mentionUserinfo = new Discord.MessageEmbed()
                 .setAuthor('RacoonBot')
                 .setTitle('User info')
                 .setColor("RANDOM")
                 .setThumbnail(mentionUser.displayAvatarURL())
-                .addField("Full Username", `${mentionUser.tag}`)
-                .addField("ID", mentionUser.id)
-                .addField("Created at", mentionUser.createdAt)
+                .addField("Full Username", `${mentionUser.tag}`, true)
+                .addField("ID", mentionUser.id, true)
+                .addField('Status', mentionUser.presence.status, false)
+                .addField("Created at", mentionUser.createdAt, false)
             message.channel.send(mentionUserinfo)
+        }
+        else
+        {
+            message.reply('You did not mentionned a user')
         }
     },
 };
