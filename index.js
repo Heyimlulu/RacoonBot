@@ -92,7 +92,7 @@ client.on('ready', () => {
     console.log('===========[ READY ]===========');
 
     setInterval(() => {
-        let activityTypes = ['PLAYING','STREAMING', 'LISTENING']
+        let activityTypes = ['PLAYING','STREAMING','LISTENING']
         let randomType = activityTypes[Math.floor((Math.random()*activityTypes.length))]
 
         if (randomType == 'PLAYING'){

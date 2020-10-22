@@ -27,7 +27,7 @@ module.exports = {
             message.delete();
             message.channel.send(Embed);
         } else {
-            message.channel.send(`You did not specified a user! **${message.author.tag}**`);
+            message.reply(`You did not specified a user!`);
         }
     },
 };

@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const config = require("../../json/config.json");
 
 module.exports = {
     name: 'steam',
@@ -7,7 +8,7 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        let steamSearch = message.content.split('racoon steam').join("")
+        let steamSearch = message.content.split(`${config.prefix}steam`).join("")
 
         if (steamSearch == '') {
             message.reply("Invalid steamID!");
@@ -148,26 +149,32 @@ module.exports = {
                                     const unixTime = response.response.players[0].timecreated;
                                     const dateCreatedat = new Date(unixTime * 1000);
 
-                                    // Display result in a Message Embed
-                                    const steamEmbed = new Discord.MessageEmbed()
-                                        .setColor("RANDOM")
-                                        .setTitle(response.response.players[0].personaname)
-                                        .setDescription(`Realname : ${realName}`)
-                                        .setURL(response.response.players[0].profileurl)
-                                        .addField('SteamID', response.response.players[0].steamid, false)
-                                        .addField('Profile visibility', stateProfile, false)
-                                        .addField('Country', country, true)
-                                        .addField('State', state, true)
-                                        .addField('City', city, true)
-                                        .addField('Friends count', friendsCount, true)
-                                        .addField('Games count', gameCount, true)
-                                        .addField('VAC banned?', vacBanned, true)
-                                        .addField('Recent game', recentGame, false)
-                                        .addField('Last logoff', lastlogoffTime, false)
-                                        .addField('Created at', dateCreatedat, false)
-                                        .setThumbnail(response.response.players[0].avatarfull)
 
-                                    message.channel.send(steamEmbed);
+                                    message.channel.send('Fetching informations...').then((msg) => {
+                                        setTimeout(() => {
+                                            msg.delete();
+                                            // Display result in a Message Embed
+                                            const steamEmbed = new Discord.MessageEmbed()
+                                                .setColor("RANDOM")
+                                                .setTitle(response.response.players[0].personaname)
+                                                .setDescription(`Realname : ${realName}`)
+                                                .setURL(response.response.players[0].profileurl)
+                                                .addField('SteamID', response.response.players[0].steamid, false)
+                                                .addField('Profile visibility', stateProfile, false)
+                                                .addField('Country', country, true)
+                                                .addField('State', state, true)
+                                                .addField('City', city, true)
+                                                .addField('Friends count', friendsCount, true)
+                                                .addField('Games count', gameCount, true)
+                                                .addField('VAC banned?', vacBanned, true)
+                                                .addField('Recent game', recentGame, false)
+                                                .addField('Last logoff', lastlogoffTime, false)
+                                                .addField('Created at', dateCreatedat, false)
+                                                .setThumbnail(response.response.players[0].avatarfull)
+
+                                            message.channel.send(steamEmbed);
+                                        }, 1000);
+                                    })
                                 })
                             })
                         })

@@ -7,11 +7,13 @@ module.exports = {
     execute(message) {
 
         if (message.mentions.users.first()) {
+
             const love = Math.random() * 100
             const loveIndex = Math.floor(love / 10)
             const loveLevel = '💖'.repeat(loveIndex) + '💔'.repeat(10 - loveIndex)
 
             const User = message.mentions.users.first()
+
             const loveEmbed = new Discord.MessageEmbed()
                 .setColor("RANDOM")
                 .setTitle('Love')
@@ -21,7 +23,7 @@ module.exports = {
             message.delete()
             message.channel.send(loveEmbed)
         } else {
-            message.channel.send(`You did not specified a user! **${message.author.tag}**`)
+            message.reply(`You did not specified a user!`)
         }
     },
 
