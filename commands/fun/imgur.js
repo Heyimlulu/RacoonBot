@@ -23,8 +23,8 @@ module.exports = {
                 message.channel.send('Please wait...').then((msg) => {
                     setTimeout(() => {
                         const i = Math.floor((Math.random() * response.data.length));
-
-                        msg.edit(`**${response.data[i].title}**\n${response.data[i].link}`); // Edit from the previous message
+                        msg.delete(); // Delete previous message
+                        message.channel.send(`**${response.data[i].title}**\n${response.data[i].link}`); // Edit from the previous message
                     }, 2000);
                 });
 
