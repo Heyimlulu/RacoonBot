@@ -1,4 +1,5 @@
 const fetch = require('node-fetch');
+const config = require("../../json/config.json");
 
 module.exports = {
     name: 'imgur',
@@ -6,7 +7,7 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        let imgurSearch = message.content.split('racoon imgur').join("")
+        let imgurSearch = message.content.split(`${config.prefix}imgur`).join("")
 
         if (imgurSearch == '') {
             message.reply("Invalid search argument");
@@ -19,9 +20,20 @@ module.exports = {
                 if (response.success == 'false')
                     return message.channel.send('An error has occurred');
 
+                message.channel.send('Please wait...').then((msg) => {
+                    setTimeout(() => {
+                        const i = Math.floor((Math.random() * response.data.length));
+
+                        msg.edit(`**${response.data[i].title}**\n${response.data[i].link}`); // Edit from the previous message
+                    }, 2000);
+                });
+
+                /*
                 const i = Math.floor((Math.random() * response.data.length));
 
                 message.channel.send(`**${response.data[i].title}**\n${response.data[i].link}`);
+
+                 */
             });
         }
     },

@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const fetch = require('node-fetch');
+const config = require("../../json/config.json");
 
 module.exports = {
     name: 'reddit',
@@ -7,7 +8,7 @@ module.exports = {
     category: 'fun',
     execute(message) {
 
-        let redditSearch = message.content.split('racoon reddit').join('').trim()
+        let redditSearch = message.content.split(`${config.prefix}reddit`).join('').trim()
         
         if (redditSearch == '') {
             message.channel.send("No subreddit specified");
@@ -26,15 +27,19 @@ module.exports = {
                 if (response.data.children[i].data.over_18 == true && !message.channel.nsfw)
                     return message.channel.send('No nsfw');
 
-                const redditEmbed = new Discord.MessageEmbed()
-                    .setColor("RANDOM")
-                    .setTitle(response.data.children[i].data.title)
-                    .setDescription(response.data.children[i].data.selftext)
-                    .setURL('https://reddit.com' + response.data.children[i].data.permalink)
-                    .setImage(response.data.children[i].data.url_overridden_by_dest)
-                    .setFooter(`/r/${response.data.children[i].data.subreddit} | ⬆ ${response.data.children[i].data.ups} 🗨 ${response.data.children[i].data.num_comments}`);
-
-                message.channel.send(redditEmbed);
+                message.channel.send('Please wait...').then((msg) => {
+                    setTimeout(() => {
+                        msg.delete(); // Delete previous message
+                        const redditEmbed = new Discord.MessageEmbed()
+                        redditEmbed.setColor("RANDOM")
+                            .setTitle(response.data.children[i].data.title)
+                            .setDescription(response.data.children[i].data.selftext)
+                            .setURL('https://reddit.com' + response.data.children[i].data.permalink)
+                            .setImage(response.data.children[i].data.url_overridden_by_dest)
+                            .setFooter(`/r/${response.data.children[i].data.subreddit} | ⬆ ${response.data.children[i].data.ups} 🗨 ${response.data.children[i].data.num_comments}`);
+                        message.channel.send(redditEmbed); // Send new message
+                    }, 2000); // Wait 2 seconds before editing message
+                })
             });
         }
     },

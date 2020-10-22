@@ -16,7 +16,7 @@ module.exports = {
             setTimeout(() => {
                 msg.edit('haha'); // Edit the "Please wait..." message
             }, 2000);
-        })
+        });
 
          */
 
@@ -29,7 +29,7 @@ module.exports = {
                     .setTimestamp()
                 message.channel.send(Embed); // Send new message
             }, 2000); // Wait 2 seconds before editing message
-        })
+        });
 
     },
 };
