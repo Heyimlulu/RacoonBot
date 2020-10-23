@@ -15,6 +15,7 @@ const voice = require('./commands/voice/music');
 const status = require('./commands/owner/status');
 const feedback = require('./commands/utility/feedback');
 const dm = require('./commands/owner/dm');
+const total = require('./commands/owner/total');
 
 const counter = require('./counter');
 
@@ -132,6 +133,7 @@ voice(client);
 status(client);
 feedback(client);
 dm(client);
+total(client);
 
 counter(client);
 

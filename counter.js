@@ -13,7 +13,7 @@ module.exports = (client) => {
 
             // Write the data back to the JSON file, logging any errors to the console.
             try {
-                fs.writeFileSync('./json/guilds.json', JSON.stringify(guilds)); // Again, path may vary.
+                fs.writeFileSync('./json/guilds.json', JSON.stringify(guilds));
             } catch(err) {
                 console.error(err);
             }

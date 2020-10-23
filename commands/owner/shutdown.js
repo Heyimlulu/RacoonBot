@@ -5,7 +5,7 @@ module.exports = {
     execute(message) {
 
         if (message.author.id !== '265896171384340480') {
-            message.channel.send(`Sorry, you can't do that ${message.author.tag}!`)
+            message.reply(`Sorry, you can't do that!`)
             return
         }
 
