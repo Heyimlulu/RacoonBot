@@ -11,7 +11,7 @@ module.exports = {
             .setTitle('Vote for my bot')
             .setAuthor('RacoonBot')
             .setDescription('You can vote for my bot if you like it!')
-            // .addField('top.gg', 'https://top.gg/bot/.../vote')
+            .addField('top.gg', 'https://top.gg/bot/734426328002068481/vote')
             .addField('Discordbotlist.com', 'https://discordbotlist.com/bots/racoonbot/upvote')
             .attachFiles(attachment)
             .setImage('attachment://racoon-for-me.jpg')
