@@ -1,3 +1,4 @@
+/*
 const fs = require('fs');
 const guilds = require('./json/guilds.json');
 
@@ -21,3 +22,5 @@ module.exports = (client) => {
 
     })
 }
+
+ */

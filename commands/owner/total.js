@@ -1,3 +1,4 @@
+/*
 const Discord = require('discord.js');
 
 const config = require("../../json/config.json");
@@ -38,13 +39,6 @@ module.exports = (client) => {
                         message.reply('Guild not found, please try again');
                     }
 
-                    /*
-                    message.channel.send(guilds["350687583422119936"].messageCount);
-
-                    message.channel.send(client.guilds.resolve('350687583422119936').name);
-
-                     */
-
                 }
             } else {
                 message.reply(`You did not have permissions to execute that command!`);
@@ -52,3 +46,5 @@ module.exports = (client) => {
         }
     })
 }
+
+ */

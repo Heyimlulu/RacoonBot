@@ -15,9 +15,9 @@ const voice = require('./commands/voice/music');
 const status = require('./commands/owner/status');
 const feedback = require('./commands/utility/feedback');
 const dm = require('./commands/owner/dm');
-const total = require('./commands/owner/total');
+// const total = require('./commands/owner/total');
 
-const counter = require('./counter');
+// const counter = require('./counter');
 
 // JSON file for activities status
 const playingJSON = require('./json/playing.json');
@@ -133,9 +133,9 @@ voice(client);
 status(client);
 feedback(client);
 dm(client);
-total(client);
+// total(client);
 
-counter(client);
+// counter(client);
 
 client.on('message', message => {
 
