@@ -18,7 +18,9 @@
     "node-fetch": "^2.6.1",
     "ytdl-core": "^3.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "youtube-dl": "^3.0.2"
+  },
   "scripts": {
     "test": "node index.js",
     "start": "node index.js"
