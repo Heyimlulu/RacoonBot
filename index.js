@@ -20,9 +20,9 @@ const dm = require('./commands/owner/dm');
 // const counter = require('./counter');
 
 // JSON file for activities status
-const playingJSON = require('./json/playing.json');
-const streamingJSON = require('./json/streaming.json');
-const listeningJSON = require('./json/listening.json');
+const playingJSON = require('./json/status/playing.json');
+const streamingJSON = require('./json/status/streaming.json');
+const listeningJSON = require('./json/status/listening.json');
 
 // ===================================== Discord Collection ===================================== //
 

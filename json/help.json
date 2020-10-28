@@ -49,6 +49,10 @@
     }
   },
   "general": {
+    "8ball": {
+      "name": "8ball",
+      "description": "Fortune-telling or seeking advice"
+    },
     "advice": {
       "name": "advice",
       "description": "Send some random advices"
