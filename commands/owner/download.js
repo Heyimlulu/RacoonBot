@@ -28,24 +28,17 @@ module.exports = {
             { cwd: __dirname })
 
         try {
-            // Will be called when the download starts.
-            video.on('info', function (info) {
+            message.channel.send('Downloading...').then(() => {
+                setTimeout(() => {
+                    message.delete();
+                    message.channel.send("Here's your video!", {files: ['video.mp4']}); // Insert the previously created file on channel
+                }, 15000);
+            });
 
-                const ytdlEmbed = new Discord.MessageEmbed()
-                    .setColor("RANDOM")
-                    .setTitle(`Your video "${info.title}" is ready!`)
-                    .setURL(info.url)
-                    .setImage(info.thumbnail)
-                    .setTimestamp()
-
-                message.channel.send(ytdlEmbed);
-
-                //message.channel.send("Here's your video!", {files: ['./video.mp4']}); // Insert the previously created file on channel
-            })
-
-            //video.pipe(fs.createWriteStream('./video.mp4')) // Will create a new file called video.mp4 on root directory
+            video.pipe(fs.createWriteStream('video.mp4')); // Will create a new file called video.mp4 on root directory
         } catch (e) {
             console.log(e);
+            message.channel.send('There was an error, please check if url is correct')
         }
 
     },

@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const help = require('../../json/help.json');
+const config = require('../../json/config.json');
 
 module.exports = {
     name: 'help',
@@ -7,35 +8,169 @@ module.exports = {
     category: 'utility',
     execute(message) {
 
+        const helpCommandEmbed = new Discord.MessageEmbed();
+
+        // Admin commands
+        if (message.content.startsWith(`${config.prefix}help ban`)){
+            helpCommandEmbed.setTitle(help.admin.ban.name)
+                .setDescription(help.admin.ban.description)
+                .addField('Example', help.admin.ban.example, true)
+                .addField('User permission', 'BAN_MEMBERS', true)
+                .addField('Bot permission', 'BAN_MEMBERS', true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help unban`)){
+            helpCommandEmbed.setTitle(help.admin.unban.name)
+                .setDescription(help.admin.unban.description)
+                .addField('Example', help.admin.unban.example, true)
+                .addField('User permission', 'BAN_MEMBERS', true)
+                .addField('Bot permission', 'BAN_MEMBERS', true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help kick`)){
+            helpCommandEmbed.setTitle(help.admin.kick.name)
+                .setDescription(help.admin.kick.description)
+                .addField('Example', help.admin.kick.example, true)
+                .addField('User permission', 'KICK_MEMBERS', true)
+                .addField('Bot permission', 'KICK_MEMBERS', true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+
+        // Fun command
+        if (message.content.startsWith(`${config.prefix}help cute`)){
+            helpCommandEmbed.setTitle(help.fun.cute.name)
+                .setDescription(help.fun.cute.description)
+                .addField('Example', help.fun.cute.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help giphy`)){
+            helpCommandEmbed.setTitle(help.fun.giphy.name)
+                .setDescription(help.fun.giphy.description)
+                .addField('Example', help.fun.giphy.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help imgur`)){
+            helpCommandEmbed.setTitle(help.fun.imgur.name)
+                .setDescription(help.fun.imgur.description)
+                .addField('Example', help.fun.imgur.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help love`)){
+            helpCommandEmbed.setTitle(help.fun.love.name)
+                .setDescription(help.fun.love.description)
+                .addField('Example', help.fun.love.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help reddit`)){
+            helpCommandEmbed.setTitle(help.fun.reddit.name)
+                .setDescription(help.fun.reddit.description)
+                .addField('Example', help.fun.reddit.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help steam`)){
+            helpCommandEmbed.setTitle(help.fun.steam.name)
+                .setDescription(help.fun.steam.description)
+                .addField('Example', help.fun.steam.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+
+        // General commands
+        if (message.content.startsWith(`${config.prefix}help 8ball`)){
+            helpCommandEmbed.setTitle(help.general["8ball"].name)
+                .setDescription(help.general["8ball"].description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help advice`)){
+            helpCommandEmbed.setTitle(help.general.advice.name)
+                .setDescription(help.general.advice.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help fact`)){
+            helpCommandEmbed.setTitle(help.general.fact.name)
+                .setDescription(help.general.fact.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help sayd`)){
+            helpCommandEmbed.setTitle(help.general.sayd.name)
+                .setDescription(help.general.sayd.description)
+                .addField('Example', help.general.sayd.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+
+        // Utility commands
+        if (message.content.startsWith(`${config.prefix}help feedback`)){
+            helpCommandEmbed.setTitle(help.utility.feedback.name)
+                .setDescription(help.utility.feedback.description)
+                .addField('Example', help.utility.feedback.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help info`)){
+            helpCommandEmbed.setTitle(help.utility.info.name)
+                .setDescription(help.utility.info.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help ping`)){
+            helpCommandEmbed.setTitle(help.utility.ping.name)
+                .setDescription(help.utility.ping.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help role`)){
+            helpCommandEmbed.setTitle(help.utility.role.name)
+                .setDescription(help.utility.role.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help serverinfo`)){
+            helpCommandEmbed.setTitle(help.utility.serverinfo.name)
+                .setDescription(help.utility.serverinfo.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help stats`)){
+            helpCommandEmbed.setTitle(help.utility.stats.name)
+                .setDescription(help.utility.stats.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help upvote`)){
+            helpCommandEmbed.setTitle(help.utility.upvote.name)
+                .setDescription(help.utility.upvote.description)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+        if (message.content.startsWith(`${config.prefix}help userinfo`)){
+            helpCommandEmbed.setTitle(help.utility.userinfo.name)
+                .setDescription(help.utility.userinfo.description)
+                .addField('Example', help.utility.userinfo.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
+
         const helpEmbed = new Discord.MessageEmbed()
             .setAuthor('RacoonBot')
             .setColor("RANDOM")
             .setTitle('Help commands list')
-            .addField('⚡ Admin commands', '~', false) // Admin commands
-            .addField(`${help.admin.ban.name}`, `${help.admin.ban.description}\n *E.g. ${help.admin.ban.example}*`, true)
-            .addField(`${help.admin.unban.name}`, `${help.admin.unban.description}\n *E.g. ${help.admin.unban.example}*`, true)
-            .addField(`${help.admin.kick.name}`, `${help.admin.kick.description}\n *E.g. ${help.admin.kick.example}*`, true)
-            .addField('🎉 Fun commands', '~', false) // Fun commands
-            .addField(`${help.fun.cute.name}`, `${help.fun.cute.description}\n *E.g. ${help.fun.cute.example}*`, true)
-            .addField(`${help.fun.giphy.name}`, `${help.fun.giphy.description}\n *E.g. ${help.fun.giphy.example}*`, true)
-            .addField(`${help.fun.imgur.name}`, `${help.fun.imgur.description}\n *E.g. ${help.fun.imgur.example}*`, true)
-            .addField(`${help.fun.love.name}`, `${help.fun.love.description}\n *E.g. ${help.fun.love.example}*`, true)
-            .addField(`${help.fun.reddit.name}`, `${help.fun.reddit.description}\n *E.g. ${help.fun.reddit.example}*`, true)
-            .addField(`${help.fun.steam.name}`, `${help.fun.steam.description}\n *E.g. ${help.fun.steam.example}*`, true)
-            .addField('📝 General commands', '~', false) // General commands
-            .addField(`${help.general.advice.name}`, `${help.general.advice.description}`, true)
-            .addField(`${help.general.fact.name}`, `${help.general.fact.description}`, true)
-            .addField(`${help.general.sayd.name}`, `${help.general.sayd.description}\n *E.g. ${help.general.sayd.example}*`, true)
-            .addField('🔩 Utility commands', '~', false) // Utility commands
-            .addField(`${help.utility.feedback.name}`, `${help.utility.feedback.description}\n *E.g. ${help.utility.feedback.example}*`, true)
-            .addField(`${help.utility.info.name}`, `${help.utility.info.description}`, true)
-            .addField(`${help.utility.ping.name}`, `${help.utility.ping.description}`, true)
-            .addField(`${help.utility.role.name}`, `${help.utility.role.description}`, true)
-            .addField(`${help.utility.serverinfo.name}`, `${help.utility.serverinfo.description}`, true)
-            .addField(`${help.utility.stats.name}`, `${help.utility.stats.description}`, true)
-            .addField(`${help.utility.upvote.name}`, `${help.utility.upvote.description}`, true)
-            .addField(`${help.utility.userinfo.name}`, `${help.utility.userinfo.description}\n *E.g. ${help.utility.userinfo.example}*`, true)
-            .addField('\u200B', '\u200B', true)
+            .setDescription('Use **racoon help command** for commands detail and example, E.g. racoon help role')
+            .addField('⚡\u2000Admin commands', `\u0060${help.admin.ban.name}\u0060 \u0060${help.admin.unban.name}\u0060 \u0060${help.admin.kick.name}\u0060`, false) // Admin commands
+            .addField('🎉\u2000Fun commands', `\u0060${help.fun.cute.name}\u0060 \u0060${help.fun.giphy.name}\u0060 \u0060${help.fun.imgur.name}\u0060 \u0060${help.fun.love.name}\u0060 \u0060${help.fun.reddit.name}\u0060 \u0060${help.fun.steam.name}\u0060`, false) // Fun commands
+            .addField('📝\u2000General commands', `\u0060${help.general["8ball"].name} \u0060 \u0060${help.general.advice.name}\u0060 \u0060${help.general.fact.name}\u0060 \u0060${help.general.sayd.name}\u0060`, false) // General commands
+            .addField('🔩\u2000Utility commands', `\u0060${help.utility.feedback.name}\u0060 \u0060${help.utility.info.name}\u0060 \u0060${help.utility.ping.name}\u0060 \u0060${help.utility.role.name}\u0060 \u0060${help.utility.serverinfo.name}\u0060 \u0060${help.utility.stats.name}\u0060 \u0060${help.utility.upvote.name}\u0060 \u0060${help.utility.userinfo.name}\u0060`, false) // Utility commands
 
         //message.author.send(helpEmbed); // Send a dm to the user
         //message.reply("I've sent you a DM with the commands list details.");

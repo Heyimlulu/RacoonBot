@@ -19,6 +19,7 @@
     "ytdl-core": "^3.3.0"
   },
   "devDependencies": {
+    "@google-cloud/text-to-speech": "^3.1.1",
     "youtube-dl": "^3.0.2"
   },
   "scripts": {
