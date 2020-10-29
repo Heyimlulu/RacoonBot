@@ -22,7 +22,14 @@ module.exports = {
                     setTimeout(() => {
                         const i = Math.floor((Math.random() * response.data.length));
                         msg.delete(); // Delete previous message
-                        message.channel.send(`**${response.data[i].title}**\n${response.data[i].url}`); // Edit from the previous message
+
+                        if (response.data[i].hasOwnProperty('title')){
+                            var noTitle = response.data[i].title;
+                        } else {
+                            var noTitle = 'Untitled';
+                        }
+
+                        message.channel.send(`**${noTitle}**\n${response.data[i].url}`); // Edit from the previous message
                     }, 2000);
                 });
 
