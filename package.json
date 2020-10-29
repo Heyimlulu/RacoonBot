@@ -20,7 +20,8 @@
   },
   "devDependencies": {
     "@google-cloud/text-to-speech": "^3.1.1",
-    "youtube-dl": "^3.0.2"
+    "youtube-dl": "^3.0.2",
+    "ytpplus-node": "^1.1.2"
   },
   "scripts": {
     "test": "node index.js",
