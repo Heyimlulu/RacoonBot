@@ -19,7 +19,7 @@
 
 ### Prerequisites
 
-You need to do the following :
+You need to do the following
 
 - Install [NodeJS](https://nodejs.org/) on your computer
 
@@ -35,7 +35,7 @@ You need to do the following :
   
   - ytdl-core
 
-- Register to theses websites to get your own API key 
+- Register to theses websites to get your API key 
 
   - imgur 
   
@@ -103,4 +103,4 @@ npm start
 
 ## License
 
-Licensed under the [GNU Affero General Public License v3.0 License.](https://github.com/Heyimlulu/RacoonBot/blob/master/LICENSE) Click for more informations.
+Licensed under the [GNU Affero General Public License v3.0 License.](https://github.com/Heyimlulu/RacoonBot/blob/master/LICENSE) Click for more information.
