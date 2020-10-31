@@ -8,7 +8,7 @@
 ![](https://img.shields.io/static/v1?label=Published&message=DiscordBotList.com&style=for-the-badge&color=green)
 ![](https://img.shields.io/static/v1?label=Published&message=Top.gg&style=for-the-badge&color=green)
 ![](https://img.shields.io/static/v1?label=Author&message=Heyimlulu&style=for-the-badge)
-![](https://img.shields.io/static/v1?label=Discord&message=Yuki%20💜%230001&style=for-the-badge)
+![](https://img.shields.io/static/v1?label=Discord&message=Yuki%20🐺%230001&style=for-the-badge)
 ![](https://img.shields.io/github/license/Heyimlulu/RacoonBot?style=for-the-badge)
 
 ## Status
