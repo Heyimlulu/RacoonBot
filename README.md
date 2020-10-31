@@ -34,6 +34,8 @@ You need to do the following
   - ffmpeg, ffmpeg-static, flutent-ffmpeg
   
   - ytdl-core
+  
+- Install the youtube-dl module for the download command
 
 - Register to theses websites to get your API key 
 
