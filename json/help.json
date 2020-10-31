@@ -68,6 +68,11 @@
     }
   },
   "utility": {
+    "download": {
+      "name": "download",
+      "description": "Download videos from youtube",
+      "example": "racoon download https://www.youtube.com/watch?v=3RAW_0tZN4Y"
+    },
     "feedback": {
       "name": "feedback",
       "description": "What do you want to say to the developer?",

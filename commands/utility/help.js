@@ -111,6 +111,13 @@ module.exports = {
         }
 
         // Utility commands
+        if (message.content.startsWith(`${config.prefix}help download`)){
+            helpCommandEmbed.setTitle(help.utility.download.name)
+                .setDescription(help.utility.download.description)
+                .addField('Example', help.utility.download.example, true)
+
+            return message.channel.send(helpCommandEmbed);
+        }
         if (message.content.startsWith(`${config.prefix}help feedback`)){
             helpCommandEmbed.setTitle(help.utility.feedback.name)
                 .setDescription(help.utility.feedback.description)
@@ -170,7 +177,7 @@ module.exports = {
             .addField('⚡\u2000Admin commands', `\u0060${help.admin.ban.name}\u0060 \u0060${help.admin.unban.name}\u0060 \u0060${help.admin.kick.name}\u0060`, false) // Admin commands
             .addField('🎉\u2000Fun commands', `\u0060${help.fun.cute.name}\u0060 \u0060${help.fun.giphy.name}\u0060 \u0060${help.fun.imgur.name}\u0060 \u0060${help.fun.love.name}\u0060 \u0060${help.fun.reddit.name}\u0060 \u0060${help.fun.steam.name}\u0060`, false) // Fun commands
             .addField('📝\u2000General commands', `\u0060${help.general["8ball"].name} \u0060 \u0060${help.general.advice.name}\u0060 \u0060${help.general.fact.name}\u0060 \u0060${help.general.sayd.name}\u0060`, false) // General commands
-            .addField('🔩\u2000Utility commands', `\u0060${help.utility.feedback.name}\u0060 \u0060${help.utility.info.name}\u0060 \u0060${help.utility.ping.name}\u0060 \u0060${help.utility.role.name}\u0060 \u0060${help.utility.serverinfo.name}\u0060 \u0060${help.utility.stats.name}\u0060 \u0060${help.utility.upvote.name}\u0060 \u0060${help.utility.userinfo.name}\u0060`, false) // Utility commands
+            .addField('🔩\u2000Utility commands', `\u0060${help.utility.download.name}\u0060 \u0060${help.utility.feedback.name}\u0060 \u0060${help.utility.info.name}\u0060 \u0060${help.utility.ping.name}\u0060 \u0060${help.utility.role.name}\u0060 \u0060${help.utility.serverinfo.name}\u0060 \u0060${help.utility.stats.name}\u0060 \u0060${help.utility.upvote.name}\u0060 \u0060${help.utility.userinfo.name}\u0060`, false) // Utility commands
 
         //message.author.send(helpEmbed); // Send a dm to the user
         //message.reply("I've sent you a DM with the commands list details.");

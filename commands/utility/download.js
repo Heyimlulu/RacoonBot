@@ -25,7 +25,7 @@ module.exports = {
 
             // on error
             video.on('error', function error(err) {
-                console.log('error 2:', err);
+                console.log('error :', err);
                 message.channel.send("An error has occured, i can't download from the link you provided.")
             });
 
