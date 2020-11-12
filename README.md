@@ -55,7 +55,14 @@ npm install
 
 ### Running
 
-Enter your bot token in the *config.json* file. You can find it in your discord developer portal 
+Enter your bot token in the *config.json* file. You can find it in your applications tab on [discord developer portal](https://discord.com/developers/applications)
+
+```
+{
+  "token": "your-discord-bot-token", 
+  "prefix": "racoon "
+}
+```
 
 Now you can run the bot with
 
@@ -71,13 +78,23 @@ npm start
 
 ## Features
 
-- Search and get a random image by name from [imgur](https://giphy.com/) and  [giphy.](https://imgur.com/)
+- Get a random image from [imgur](https://giphy.com/) and  [giphy.](https://imgur.com/)
 
-- Search a [subreddit](https://www.reddit.com/) by name and get a random post
+- Get a random [subreddit.](https://www.reddit.com/)
 
-- Get player stats from [steam](https://store.steampowered.com/) with a SteamID
+- Get player stats from [steam.](https://store.steampowered.com/)
 
-- Auto-role commands
+- Measure your cuteness with the Cute o'meter
+
+- Show for how much you love someone with the *love* command
+
+- Auto-role command! 
+
+- Download videos from youtube
+
+- Kick/Ban commands.
+
+- Open Source!
 
 ## APIs
 
