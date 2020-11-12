@@ -61,6 +61,14 @@
       "name": "fact",
       "description": "Send some random racoon facts"
     },
+    "flip": {
+      "name": "flip",
+      "description": "Flips a coin"
+    },
+    "roll": {
+      "name": "roll",
+      "description": "Roll 2 dices"
+    },
     "sayd": {
       "name": "sayd",
       "description": "Write something you want the bot to repeat",
@@ -81,6 +89,10 @@
     "info": {
       "name": "info",
       "description": "Send some informations about the developer"
+    },
+    "invite": {
+      "name": "invite",
+      "description": "Get the invite link for the bot."
     },
     "ping": {
       "name": "ping",
