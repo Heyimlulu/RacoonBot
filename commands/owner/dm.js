@@ -6,7 +6,7 @@ module.exports = (client) => {
 
         if (!message.content.startsWith(`${config.prefix}dm`) || message.author.bot) return;
 
-        if (message.author.id === '265896171384340480') { // Restrict this command for the bot owner only <-- Yuki 💜#0001
+        if (message.author.id === '265896171384340480') { // Restrict this command for the bot owner only
             try {
                 // Check if user is specified
                 let userName = message.mentions.members.first();
