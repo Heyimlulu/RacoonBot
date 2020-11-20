@@ -1,13 +1,12 @@
 {
-  "name": "racoon-bot",
+  "name": "RacoonBot",
   "author": "Heyimlulu",
   "version": "1.0.0",
-  "description": "A multifunction discord bot",
+  "description": "A multifunction and fun discord bot",
   "main": "index.js",
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
     "body-parser": "^1.18.3",
-    "discord-akairo": "^8.1.0",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -15,6 +14,7 @@
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
+    "meta-extractor": "^2.0.0",
     "node-fetch": "^2.6.1",
     "ytdl-core": "^3.3.0"
   },
