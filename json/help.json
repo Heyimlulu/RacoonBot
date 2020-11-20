@@ -22,10 +22,6 @@
       "description": "Tell a user how cute he is",
       "example": "racoon cute @user"
     },
-    "explosm": {
-      "name": "explosm",
-      "description": "Get a generated comic from Cyanide & Happiness"
-    },
     "giphy": {
       "name": "giphy",
       "description": "Send some random gif from giphy",
@@ -60,10 +56,6 @@
     "advice": {
       "name": "advice",
       "description": "Send some random advices"
-    },
-    "bing": {
-      "name": "bing",
-      "description": "Get the wallpaper of the day from Bing"
     },
     "fact": {
       "name": "fact",
