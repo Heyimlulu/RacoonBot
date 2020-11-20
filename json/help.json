@@ -61,6 +61,12 @@
       "name": "fact",
       "description": "Send some random racoon facts"
     },
+    "codeblock": {
+      "name": "codeblock",
+      "description": "Denote a specific programming language for syntax highlighting",
+      "example": "racoon codeblock <language> <snippet code>",
+      "language": "html | css | javascript | php | csharp | cpp | bash | xml | markdown | ruby | go | json | lua | perl | python | scss"
+    },
     "flip": {
       "name": "flip",
       "description": "Flips a coin"
