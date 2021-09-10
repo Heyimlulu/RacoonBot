@@ -2,14 +2,12 @@
 
 ![](https://repository-images.githubusercontent.com/286796413/a8dbb000-f467-11ea-9d0a-b42efcb9b1a5)
 
-![](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot/master?style=for-the-badge)
-![](https://img.shields.io/static/v1?label=Language&message=Javascript&style=for-the-badge&color=yellow)
-![](https://img.shields.io/static/v1?label=Dependencie&message=DiscordJS&style=for-the-badge&color=lightblue)
-![](https://img.shields.io/static/v1?label=Published&message=DiscordBotList.com&style=for-the-badge&color=green)
-![](https://img.shields.io/static/v1?label=Published&message=Top.gg&style=for-the-badge&color=green)
-![](https://img.shields.io/static/v1?label=Author&message=Heyimlulu&style=for-the-badge)
-![](https://img.shields.io/static/v1?label=Discord&message=Yuki%20🐺%230001&style=for-the-badge)
-![](https://img.shields.io/github/license/Heyimlulu/RacoonBot?style=for-the-badge)
+![](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot/master)
+![](https://img.shields.io/static/v1?label=Language&message=Javascript&color=yellow)
+![](https://img.shields.io/static/v1?label=Dependencie&message=DiscordJS&color=lightblue)
+![](https://img.shields.io/static/v1?label=Published&message=Top.gg&color=green)
+![](https://img.shields.io/static/v1?label=Author&message=Heyimlulu)
+![](https://img.shields.io/github/license/Heyimlulu/RacoonBot)
 
 ## Status
 
