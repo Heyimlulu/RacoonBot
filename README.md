@@ -2,12 +2,12 @@
 
 ![](https://repository-images.githubusercontent.com/286796413/a8dbb000-f467-11ea-9d0a-b42efcb9b1a5)
 
-![](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot/master)
+![GitHub last commit](https://img.shields.io/github/last-commit/Heyimlulu/RacoonBot)
 ![](https://img.shields.io/static/v1?label=Language&message=Javascript&color=yellow)
 ![](https://img.shields.io/static/v1?label=Dependencie&message=DiscordJS&color=lightblue)
 ![](https://img.shields.io/static/v1?label=Published&message=Top.gg&color=green)
 ![](https://img.shields.io/static/v1?label=Author&message=Heyimlulu)
-![](https://img.shields.io/github/license/Heyimlulu/RacoonBot)
+![GitHub](https://img.shields.io/github/license/Heyimlulu/RacoonBot)
 
 ## Status
 
